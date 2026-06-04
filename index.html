@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The PEACE Study | End-of-Life Decisions in EMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    /* CSS Variables for Academic Theme */
+    :root {
+      --primary-color: #002147; /* Oxford Blue */
+      --secondary-color: #2c5282; /* Deep Navy */
+      --accent-color: #c53030; /* Subdued Red for emphasis */
+      --bg-color: #f8fafc; /* Crisp Off-White */
+      --text-main: #334155; /* Slate Gray for readability */
+      --border-color: #e2e8f0;
+      --font-serif: 'Merriweather', serif;
+      --font-sans: 'Open Sans', sans-serif;
+    }
+
+    /* Global Styles */
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--text-main);
+      background-color: var(--bg-color);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, .serif {
+      font-family: var(--font-serif);
+      color: var(--primary-color);
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: var(--primary-color);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-brand {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .nav-btn {
+      background: none;
+      border: none;
+      color: #cbd5e1;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+
+    .nav-btn:hover { color: white; }
+    .nav-btn.active { color: white; border-bottom: 2px solid white; font-weight: 600; }
+
+    /* Main Container */
+    .main-content {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+      min-height: 70vh;
+    }
+
+    /* Page Sections (SPA logic) */
+    .page-section { display: none; animation: fadeIn 0.4s ease-in-out; }
+    .page-section.active { display: block; }
+
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* Academic Cards & Boxes */
+    .academic-card {
+      background: white;
+      border: 1px solid var(--border-color);
+      padding: 2.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .academic-card h2 {
+      margin-top: 0;
+      border-bottom: 2px solid var(--border-color);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.75rem;
+    }
+
+    .academic-card h3 { font-size: 1.25rem; margin-top: 1.5rem; }
+
+    /* Highlight Box (e.g. for IRB) */
+    .highlight-box {
+      background-color: #ebf4ff;
+      border-left: 4px solid var(--secondary-color);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: var(--secondary-color);
+    }
+
+    /* Framework & Vignette Tabs */
+    .vignette-container { display: flex; gap: 2rem; margin-top: 2rem; }
+    .vignette-menu { flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+    
+    .vignette-tab {
+      background: white;
+      border: 1px solid var(--border-color);
+      text-align: left;
+      padding: 1rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      cursor: pointer;
+      color: var(--text-main);
+      transition: 0.2s;
+    }
+    .vignette-tab:hover { background: #f1f5f9; }
+    .vignette-tab.active { background: var(--primary-color); color: white; border-color: var(--primary-color); font-weight: 600;}
+
+    .vignette-content-box {
+      flex: 2;
+      background: white;
+      border: 1px solid var(--border-color);
+      padding: 2rem;
+    }
+    
+    .v-content { display: none; }
+    .v-content.active { display: block; animation: fadeIn 0.3s; }
+    .v-content strong { color: var(--primary-color); }
+
+    /* Consortium Grid */
+    .consortium-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .investigator-card {
+      border: 1px solid var(--border-color);
+      background: white;
+      padding: 1.5rem;
+    }
+    
+    .investigator-card h4 { margin: 0 0 0.5rem 0; font-size: 1.1rem; }
+    .investigator-card .role { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: block; font-weight: 600;}
+    .investigator-card p { margin: 0.25rem 0; font-size: 0.9rem; }
+
+    /* CTA Button */
+    .btn-academic {
+      display: inline-block;
+      background-color: var(--secondary-color);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.3s;
+      margin-top: 1rem;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-academic:hover { background-color: var(--primary-color); }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: #94a3b8;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; gap: 1rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+      .vignette-container { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-brand">The PEACE Study</div>
+    <div class="nav-links">
+      <button class="nav-btn active" onclick="switchPage('about')">About Study</button>
+      <button class="nav-btn" onclick="switchPage('framework')">Research Framework</button>
+      <button class="nav-btn" onclick="switchPage('consortium')">Consortium & IRB</button>
+      <button class="nav-btn" onclick="switchPage('datahub')">Data Hub</button>
+    </div>
+  </nav>
+
+  <main class="main-content">
+
+    <section id="about" class="page-section active">
+      <div class="academic-card">
+        <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">From Cure to Comfort: <br>A Cross-National Study on Paramedic Decision Making</h1>
+        <p style="font-size: 1.1rem; color: #64748b; font-family: var(--font-serif); margin-bottom: 2rem;">Prehospital End-of-life Autonomy, Culture and Ethics (PEACE)</p>
+        
+        <h3>The Paradigm Shift</h3>
+        <p>As global populations age, Emergency Medical Services (EMS) are shifting from a purely life-saving model to becoming the "gatekeepers" of community end-of-life care. Paramedics and prehospital providers are often the first to encounter terminally ill patients in cardiac arrest. However, the decision to initiate or terminate resuscitation (TOR) is rarely a purely clinical one; it is a complex negotiation between legal protocols, family emotions, and systemic pressures.</p>
+        
+        <h3>The Action Gap</h3>
+        <p>While many countries have established legal frameworks for non-resuscitation (e.g., DNACPR, POLST), a significant "Action Gap" remains. Frontline providers frequently practice "defensive medicine"—performing futile CPR due to fear of litigation or intense family conflict, even when a valid DNACPR order exists.</p>
+
+        <div class="highlight-box">
+          <strong>Study Objective:</strong> To investigate and compare the decision-making patterns of prehospital EMS providers across different countries and cultural contexts when facing end-of-life care conflict scenarios, and to measure the frequency and intensity of associated moral distress.
+        </div>
+      </div>
+    </section>
+
+    <section id="framework" class="page-section">
+      <div class="academic-card">
+        <h2>Research Framework & Methodology</h2>
+        <p>This study utilizes a cross-national, multi-center web-based survey design. Participants are stratified into three major cultural cohorts to examine how distinct societal frameworks (such as family-centric filial piety versus individual patient autonomy) alter clinical paths.</p>
+        
+        <ul style="margin-bottom: 2rem;">
+          <li><strong>Group A (Confucian):</strong> Taiwan, South Korea, Japan</li>
+          <li><strong>Group B (Middle Eastern):</strong> Saudi Arabia, Jordan</li>
+          <li><strong>Group C (Western Control):</strong> UK, USA, Australia, Canada</li>
+        </ul>
+
+        <h3>Core Clinical Vignettes</h3>
+        <p>The experimental core of the study features 5 standardized, realistic clinical dilemmas. Select a scenario below to view the structural parameters testing the boundaries of prehospital ethical adherence.</p>
+
+        <div class="vignette-container">
+          <div class="vignette-menu">
+            <button class="vignette-tab active" onclick="switchVig('vig1')">Scenario 1: Valid DNACPR vs. Family</button>
+            <button class="vignette-tab" onclick="switchVig('vig2')">Scenario 2: No Document vs. "Let Her Go"</button>
+            <button class="vignette-tab" onclick="switchVig('vig3')">Scenario 3: System & Public Pressure</button>
+            <button class="vignette-tab" onclick="switchVig('vig4')">Scenario 4: Authority Conflict</button>
+            <button class="vignette-tab" onclick="switchVig('vig5')">Scenario 5: Terminal Discharge Culture</button>
+          </div>
+          
+          <div class="vignette-content-box">
+            <div id="vig1" class="v-content active">
+              <h4>Scenario 1: Valid DNACPR vs. Family Conflict</h4>
+              <p><strong>The Scene:</strong> You arrive at the home of a 78-year-old male with terminal lung cancer who is in cardiac arrest.</p>
+              <p><strong>The Document:</strong> A valid DNACPR (Do Not Attempt CPR) form is presented and confirmed.</p>
+              <p><strong>The Conflict:</strong> The patient’s son is extremely emotional, crying, and aggressively demands: "Save my father! Do CPR now or I will sue you!"</p>
+            </div>
+            <div id="vig2" class="v-content">
+              <h4>Scenario 2: No Document vs. "Let Her Go"</h4>
+              <p><strong>The Scene:</strong> An 85-year-old female with severe dementia and multiple organ failure is found pulseless in bed. She is frail and bedridden.</p>
+              <p><strong>The Document:</strong> NO official paper or digital DNACPR record is found.</p>
+              <p><strong>The Conflict:</strong> The family calmly tells you: "She has suffered enough. We all agreed to let her go. Please do not torture her with CPR."</p>
+            </div>
+            <div id="vig3" class="v-content">
+              <h4>Scenario 3: System Pressure & Public Scrutiny</h4>
+              <p><strong>The Scene:</strong> A terminally ill patient goes into cardiac arrest in a semi-public area. The spouse presents a valid DNACPR and asks you to let the patient pass peacefully.</p>
+              <p><strong>The Conflict:</strong> The adult son arrives, furious, ignores the DNACPR, demands CPR, and starts filming you with his smartphone while shouting accusations. A crowd is gathering.</p>
+              <p><strong>The Pressure:</strong> Dispatch orders: "The scene is getting out of control. Disregard the DNACPR. Just start CPR and transport immediately to clear the scene."</p>
+            </div>
+            <div id="vig4" class="v-content">
+              <h4>Scenario 4: Authority Conflict (Physician Order)</h4>
+              <p><strong>The Scene:</strong> A cancer patient is in cardiac arrest. You confirmed a valid DNACPR on scene, and judge clinically that CPR would be futile and unethical.</p>
+              <p><strong>The Authority:</strong> You contact Online Medical Direction. The physician says: "I don't want to take any legal risks tonight. Disregard the DNACPR. Start resuscitation and bring the patient in."</p>
+            </div>
+            <div id="vig5" class="v-content">
+              <h4>Scenario 5: The "Terminal Discharge" Culture</h4>
+              <p><strong>The Scene:</strong> A patient was discharged from the hospital 3 hours ago specifically to "die at home" (a cultural/religious custom).</p>
+              <p><strong>The Event & Status:</strong> The patient stops breathing. The family panics and calls EMS. There is no DNACPR paper handed to you, but the hospital discharge note clearly states "Terminal Discharge." The family is crying but not aggressive.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="consortium" class="page-section">
+      <div class="academic-card">
+        <h2>Global Consortium & Ethical Approval</h2>
+        
+        <div class="highlight-box" style="margin-bottom: 2rem;">
+          <strong>Institutional Review Board (IRB) Status:</strong><br>
+          This study protocol, data security plan, and cross-national informed consent structure have been formally reviewed and <u>approved</u> by the Ethics Committee. <br>
+          <span style="display:inline-block; margin-top:0.5rem; padding: 0.25rem 0.5rem; background:var(--primary-color); color:white; border-radius:3px;">Approval Number: ECKIRB1150308</span>
+        </div>
+
+        <h3>Principal Investigators (Lead Sites)</h3>
+        <div class="consortium-grid">
+          <div class="investigator-card">
+            <span class="role">Co-Principal Investigator</span>
+            <h4>Yu-Tung Chang, PhD</h4>
+            <p><strong>Taiwan</strong> 🇹🇼</p>
+            <p>College of Health Technology<br>National Taipei University of Nursing and Health Sciences</p>
+          </div>
+          <div class="investigator-card">
+            <span class="role">Co-Principal Investigator</span>
+            <h4>Prof. Brett Williams, PhD, FACP</h4>
+            <p><strong>Saudi Arabia</strong> 🇸🇦</p>
+            <p>Department of Emergency Medical Care<br>Imam Abdulrahman Bin Faisal University</p>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 3rem;">National Coordinators (Partner Sites)</h3>
+        <p>We are actively expanding our network of EMS researchers worldwide. National Coordinators lead data collection within their respective countries and contribute to manuscript co-authorship.</p>
+        
+        <div class="consortium-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+          <div class="investigator-card" style="background:#f8fafc;">
+            <span class="role">Japan 🇯🇵</span>
+            <h4>[Dr. Name Here]</h4>
+            <p>[Institution Name]</p>
+          </div>
+          <div class="investigator-card" style="background:#f8fafc;">
+            <span class="role">South Korea 🇰🇷</span>
+            <h4>[Dr. Name Here]</h4>
+            <p>[Institution Name]</p>
+          </div>
+          <div class="investigator-card" style="background:#f8fafc;">
+            <span class="role">United Kingdom 🇬🇧</span>
+            <h4>[Dr. Name Here]</h4>
+            <p>[Institution Name]</p>
+          </div>
+        </div>
+
+        <div style="margin-top: 3rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color);">
+          <p>Interested in joining the consortium as a National Lead?</p>
+          <a href="mailto:yutung@ntunhs.edu.tw" class="btn-academic">Contact the PI to Collaborate</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="datahub" class="page-section">
+      <div class="academic-card">
+        <h2>Data Hub & Recruitment Status</h2>
+        <p>To ensure robust statistical power for multivariate modeling (e.g., ANOVAs and multiple logistic regression), the study requires a minimum of 300 valid responses per cultural block. The overall global recruitment target is established between 1,000 and 1,500 frontline participants.</p>
+        
+        <div style="margin-top: 2.5rem;">
+          <h4 style="margin-bottom: 0.5rem; color: var(--text-main); font-family: var(--font-sans);">Group A: Confucian Cultural Block (Target: 300+)</h4>
+          <div style="background: #e2e8f0; height: 24px; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem;">
+            <div style="background: var(--secondary-color); width: 15%; height: 100%; display: flex; align-items: center; padding-left: 10px; color: white; font-size: 0.8rem; font-weight: bold;">Recruiting...</div>
+          </div>
+
+          <h4 style="margin-bottom: 0.5rem; color: var(--text-main); font-family: var(--font-sans);">Group B: Middle Eastern Block (Target: 300+)</h4>
+          <div style="background: #e2e8f0; height: 24px; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem;">
+            <div style="background: var(--secondary-color); width: 5%; height: 100%; display: flex; align-items: center; padding-left: 10px; color: white; font-size: 0.8rem; font-weight: bold;">Recruiting...</div>
+          </div>
+
+          <h4 style="margin-bottom: 0.5rem; color: var(--text-main); font-family: var(--font-sans);">Group C: Western Control Block (Target: 300+)</h4>
+          <div style="background: #e2e8f0; height: 24px; border-radius: 12px; overflow: hidden; margin-bottom: 1.5rem;">
+            <div style="background: #94a3b8; width: 0%; height: 100%;"></div>
+            <div style="font-size: 0.85rem; color: #64748b; margin-top: 4px;">Awaiting National Coordinator</div>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #64748b; margin-top: 2rem;">* Real-time metrics will be published here upon completion of Phase 2 (Data Collection).</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>The PEACE Study</strong> — Prehospital End-of-life Autonomy, Culture and Ethics</p>
+    <p>Approved by the Institutional Review Board (ECKIRB1150308). Data strictly restricted to academic analysis.</p>
+    <p>&copy; 2026 PEACE Study Global Consortium. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 導覽列分頁切換邏輯
+    function switchPage(pageId) {
+      // Hide all sections
+      document.querySelectorAll('.page-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      // Deactivate all nav buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      
+      // Show target section & activate target nav button
+      document.getElementById(pageId).classList.add('active');
+      event.target.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // 情境題(Vignettes)切換邏輯
+    function switchVig(vigId) {
+      // Hide all vignette contents
+      document.querySelectorAll('.v-content').forEach(content => {
+        content.classList.remove('active');
+      });
+      // Deactivate all vignette tabs
+      document.querySelectorAll('.vignette-tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+
+      // Show target vignette & activate tab
+      document.getElementById(vigId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
