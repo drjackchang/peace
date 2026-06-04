@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The PEACE Study | End-of-Life Decisions in EMS</title>
+  
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
   
   <style>
     /* CSS Variables for Academic Theme */
@@ -44,7 +47,7 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     .nav-brand {
@@ -74,10 +77,43 @@
     .nav-btn:hover { color: white; }
     .nav-btn.active { color: white; border-bottom: 2px solid white; font-weight: 600; }
 
+    /* --- Hero Image Section 樣式 --- */
+    .hero-section {
+      width: 100%;
+      height: 400px;
+      /* 內建高畫質無版權醫學/抽象寧靜背景圖，並疊加深藍色濾鏡確保文字清晰 */
+      background-image: linear-gradient(rgba(0, 33, 71, 0.8), rgba(0, 33, 71, 0.7)), url('https://images.unsplash.com/photo-1582719508461-905c673771fd?q=80&w=2000&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* 視差滾動效果 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    .hero-section h1 {
+      font-size: 3.5rem;
+      margin: 0;
+      color: white;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+
+    .hero-section .hero-desc {
+      font-family: var(--font-sans);
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      margin-top: 15px;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      max-width: 800px;
+    }
+
     /* Main Container */
     .main-content {
       max-width: 1000px;
-      margin: 3rem auto;
+      margin: 0 auto 3rem auto;
       padding: 0 2rem;
       min-height: 70vh;
     }
@@ -96,6 +132,8 @@
       margin-bottom: 2rem;
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
+    
+    #about .academic-card { border-top: none; padding-top: 2rem; margin-top: -2rem; border-radius: 8px;}
 
     .academic-card h2 {
       margin-top: 0;
@@ -159,11 +197,25 @@
       border: 1px solid var(--border-color);
       background: white;
       padding: 1.5rem;
+      border-radius: 4px;
     }
     
     .investigator-card h4 { margin: 0 0 0.5rem 0; font-size: 1.1rem; }
-    .investigator-card .role { font-size: 0.85rem; color: #64748b; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: block; font-weight: 600;}
+    .investigator-card .role { 
+      font-size: 0.85rem; 
+      color: #64748b; 
+      text-transform: uppercase; 
+      letter-spacing: 1px; 
+      margin-bottom: 1rem; 
+      display: flex; 
+      align-items: center; 
+      gap: 8px; 
+      font-weight: 600;
+    }
     .investigator-card p { margin: 0.25rem 0; font-size: 0.9rem; }
+    
+    /* 國旗大小微調 */
+    .fi { font-size: 1.2rem; border-radius: 2px; }
 
     /* CTA Button */
     .btn-academic {
@@ -179,6 +231,7 @@
       margin-top: 1rem;
       border: none;
       cursor: pointer;
+      border-radius: 4px;
     }
     .btn-academic:hover { background-color: var(--primary-color); }
 
@@ -197,6 +250,7 @@
       .navbar { flex-direction: column; gap: 1rem; }
       .nav-links { flex-wrap: wrap; justify-content: center; }
       .vignette-container { flex-direction: column; }
+      .hero-section h1 { font-size: 2.5rem; }
     }
   </style>
 </head>
@@ -212,13 +266,15 @@
     </div>
   </nav>
 
+  <header class="hero-section">
+    <h1>The PEACE Study</h1>
+    <p class="hero-desc">Prehospital End-of-life Autonomy, Culture and Ethics<br>A Cross-National Study on Paramedic Decision Making</p>
+  </header>
+
   <main class="main-content">
 
     <section id="about" class="page-section active">
       <div class="academic-card">
-        <h1 style="font-size: 2.2rem; margin-bottom: 0.5rem;">From Cure to Comfort: <br>A Cross-National Study on Paramedic Decision Making</h1>
-        <p style="font-size: 1.1rem; color: #64748b; font-family: var(--font-serif); margin-bottom: 2rem;">Prehospital End-of-life Autonomy, Culture and Ethics (PEACE)</p>
-        
         <h3>The Paradigm Shift</h3>
         <p>As global populations age, Emergency Medical Services (EMS) are shifting from a purely life-saving model to becoming the "gatekeepers" of community end-of-life care. Paramedics and prehospital providers are often the first to encounter terminally ill patients in cardiac arrest. However, the decision to initiate or terminate resuscitation (TOR) is rarely a purely clinical one; it is a complex negotiation between legal protocols, family emotions, and systemic pressures.</p>
         
@@ -301,15 +357,15 @@
         <h3>Principal Investigators (Lead Sites)</h3>
         <div class="consortium-grid">
           <div class="investigator-card">
-            <span class="role">Co-Principal Investigator</span>
+            <span class="role"><span class="fi fi-tw"></span> Taiwan</span>
             <h4>Yu-Tung Chang, PhD</h4>
-            <p><strong>Taiwan</strong> 🇹🇼</p>
+            <p><strong>Co-Principal Investigator</strong></p>
             <p>College of Health Technology<br>National Taipei University of Nursing and Health Sciences</p>
           </div>
           <div class="investigator-card">
-            <span class="role">Co-Principal Investigator</span>
+            <span class="role"><span class="fi fi-sa"></span> Saudi Arabia</span>
             <h4>Prof. Brett Williams, PhD, FACP</h4>
-            <p><strong>Saudi Arabia</strong> 🇸🇦</p>
+            <p><strong>Co-Principal Investigator</strong></p>
             <p>Department of Emergency Medical Care<br>Imam Abdulrahman Bin Faisal University</p>
           </div>
         </div>
@@ -319,17 +375,17 @@
         
         <div class="consortium-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
           <div class="investigator-card" style="background:#f8fafc;">
-            <span class="role">Japan 🇯🇵</span>
+            <span class="role"><span class="fi fi-jp"></span> Japan</span>
             <h4>[Dr. Name Here]</h4>
             <p>[Institution Name]</p>
           </div>
           <div class="investigator-card" style="background:#f8fafc;">
-            <span class="role">South Korea 🇰🇷</span>
+            <span class="role"><span class="fi fi-kr"></span> South Korea</span>
             <h4>[Dr. Name Here]</h4>
             <p>[Institution Name]</p>
           </div>
           <div class="investigator-card" style="background:#f8fafc;">
-            <span class="role">United Kingdom 🇬🇧</span>
+            <span class="role"><span class="fi fi-gb"></span> United Kingdom</span>
             <h4>[Dr. Name Here]</h4>
             <p>[Institution Name]</p>
           </div>
