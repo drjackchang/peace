@@ -4,27 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The PEACE Study | End-of-Life Decisions in EMS</title>
-
-  <!-- ── Open Graph (FB, LINE, WhatsApp, LinkedIn) ───────────────── -->
+  
+  <!-- OG / Twitter / LINE preview -->
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://drjackchang.github.io/peace/" />
   <meta property="og:title"        content="The PEACE Study — Participate Now" />
-  <meta property="og:description"  content="An international study on how EMS providers decide when facing DNACPR conflict, family pressure, and physician overrides. 12–15 min · Anonymous · IRB approved (ECKIRB1150308)." />
+  <meta property="og:description"  content="An international study on how EMS providers decide when facing DNACPR conflict. 8–10 min · Anonymous · IRB approved (ECKIRB1150308)." />
   <meta property="og:image"        content="https://drjackchang.github.io/peace/og-cover.png" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:locale"       content="en_US" />
-  <meta property="og:site_name"    content="The PEACE Study" />
-
-  <!-- ── Twitter Card ────────────────────────────────────────────── -->
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="The PEACE Study — Participate Now" />
-  <meta name="twitter:description" content="An international study on how EMS providers decide when facing DNACPR conflict. 12–15 min · Anonymous · IRB approved." />
+  <meta name="twitter:description" content="An international study on DNACPR decision-making in EMS. 8–10 min · Anonymous · IRB approved." />
   <meta name="twitter:image"       content="https://drjackchang.github.io/peace/og-cover.png" />
-
-  <!-- ── General / SEO ───────────────────────────────────────────── -->
-  <meta name="description" content="An international study on how EMS providers decide when facing DNACPR conflict, family pressure, and physician overrides. 12–15 min · Anonymous · IRB approved (ECKIRB1150308)." />
-  <meta name="keywords"    content="EMS, DNACPR, end-of-life, paramedic, prehospital, survey, research, palliative care" />
+  <meta name="description"         content="An international study on how EMS providers decide when facing DNACPR conflict. 8–10 min · Anonymous · IRB approved (ECKIRB1150308)." />
 
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
@@ -510,6 +503,45 @@
     }
     .btn-academic:hover { background-color: var(--primary-color); }
 
+    /* ─── Footer ─── */
+    footer {
+      background-color: var(--primary-color);
+      color: #6b8aa8;
+      text-align: center;
+      padding: 2.5rem 2rem;
+      margin-top: 4rem;
+      font-size: 0.82rem;
+      line-height: 1.9;
+    }
+    footer strong { color: #94aec8; }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 768px) {
+      .navbar { flex-direction: column; gap: 0.75rem; padding: 1rem; }
+      .nav-links { flex-wrap: wrap; justify-content: center; }
+      .hero-section h1 { font-size: 2.2rem; }
+      .vignette-container { flex-direction: column; }
+      .vignette-menu { flex: none; }
+      .intro-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ─── Language Switch ─── */
+    .lang-switch-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #a8c0d6;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      cursor: pointer;
+      padding: 0.38rem 0.85rem;
+      border-radius: 4px;
+      transition: all 0.2s;
+      letter-spacing: 0.3px;
+      margin-left: 0.5rem;
+    }
+    .lang-switch-btn:hover { background: rgba(255,255,255,0.18); color: white; }
+    .lang-switch-btn.active-lang { background: rgba(255,255,255,0.22); color: white; font-weight: 600; border-color: rgba(255,255,255,0.45); }
+
     /* ─── Survey CTA Banner ─── */
     .survey-cta-banner {
       background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
@@ -533,15 +565,11 @@
       color: rgba(255,255,255,0.82);
       font-size: 0.88rem;
       margin: 0;
-      line-height: 1.5;
     }
     .survey-cta-banner .cta-pills {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 0.6rem;
+      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 0.6rem;
     }
-    .survey-cta-banner .cta-pill {
+    .cta-pill {
       background: rgba(255,255,255,0.18);
       color: white;
       font-size: 0.75rem;
@@ -564,36 +592,10 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.15);
       flex-shrink: 0;
     }
-    .btn-survey:hover {
-      background: #f0f4f8;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
+    .btn-survey:hover { background: #f0f4f8; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
     @media (max-width: 600px) {
       .survey-cta-banner { flex-direction: column; text-align: center; }
       .survey-cta-banner .cta-pills { justify-content: center; }
-    }
-
-    /* ─── Footer ─── */
-    footer {
-      background-color: var(--primary-color);
-      color: #6b8aa8;
-      text-align: center;
-      padding: 2.5rem 2rem;
-      margin-top: 4rem;
-      font-size: 0.82rem;
-      line-height: 1.9;
-    }
-    footer strong { color: #94aec8; }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 768px) {
-      .navbar { flex-direction: column; gap: 0.75rem; padding: 1rem; }
-      .nav-links { flex-wrap: wrap; justify-content: center; }
-      .hero-section h1 { font-size: 2.2rem; }
-      .vignette-container { flex-direction: column; }
-      .vignette-menu { flex: none; }
-      .intro-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -605,66 +607,60 @@
       <span>Prehospital End-of-life Autonomy, Culture and Ethics</span>
     </a>
     <div class="nav-links">
-      <button class="nav-btn active" onclick="switchPage('about', this)">About Study</button>
-      <button class="nav-btn" onclick="switchPage('framework', this)">Research Framework</button>
-      <button class="nav-btn" onclick="switchPage('consortium', this)">Consortium & IRB</button>
-      <button class="nav-btn" onclick="switchPage('datahub', this)">Data Hub</button>
+      <button class="nav-btn active" onclick="switchPage('about', this)" data-key="nav_about">About Study</button>
+      <button class="nav-btn" onclick="switchPage('framework', this)" data-key="nav_framework">Research Framework</button>
+      <button class="nav-btn" onclick="switchPage('consortium', this)" data-key="nav_consortium">Consortium & IRB</button>
+      <button class="nav-btn" onclick="switchPage('datahub', this)" data-key="nav_datahub">Data Hub</button>
+    </div>
+    <div style="display:flex;gap:4px;margin-left:1rem;">
+      <button class="lang-switch-btn active-lang" onclick="switchLang('en',this)" id="btn_en">EN</button>
+      <button class="lang-switch-btn" onclick="switchLang('zh',this)" id="btn_zh">中文</button>
     </div>
   </nav>
 
   <header class="hero-section">
-    <p class="hero-eyebrow">Cross-National EMS Research</p>
-    <h1>The PEACE Study</h1>
-    <p class="hero-subtitle">Prehospital End-of-life Autonomy, Culture and Ethics</p>
+    <p class="hero-eyebrow" data-key="hero_eyebrow">Cross-National EMS Research</p>
+    <h1 data-key="hero_h1">The PEACE Study</h1>
+    <p class="hero-subtitle" data-key="hero_subtitle">Prehospital End-of-life Autonomy, Culture and Ethics</p>
     <div class="hero-divider"></div>
-    <p class="hero-desc">A Multi-Center Study on Paramedic Decision-Making in End-of-Life Conflict Scenarios</p>
+    <p class="hero-desc" data-key="hero_desc">A Multi-Center Study on Paramedic Decision-Making in End-of-Life Conflict Scenarios</p>
   </header>
 
   <main class="main-content">
 
     <!-- ═══ ABOUT ═══ -->
     <section id="about" class="page-section active">
-
       <div style="padding: 2.5rem 0 1.5rem;">
         <div class="academic-card" style="border-top: 3px solid var(--secondary-color);">
-
           <div class="intro-grid">
             <div class="intro-block paradigm">
-              <h3>The Paradigm Shift</h3>
-              <p>As global populations age, Emergency Medical Services (EMS) are shifting from a purely life-saving model to becoming the <em>gatekeepers</em> of community end-of-life care. Paramedics are often the first to encounter terminally ill patients in cardiac arrest—yet the decision to initiate or withhold resuscitation is rarely a purely clinical one.</p>
+              <h3 data-key="about_h3a">The Paradigm Shift</h3>
+              <p data-key="about_p1">As global populations age, Emergency Medical Services (EMS) are shifting from a purely life-saving model to becoming the <em>gatekeepers</em> of community end-of-life care. Paramedics are often the first to encounter terminally ill patients in cardiac arrest—yet the decision to initiate or withhold resuscitation is rarely a purely clinical one.</p>
             </div>
             <div class="intro-block action">
-              <h3>The Action Gap</h3>
-              <p>While many countries have established legal frameworks for non-resuscitation (DNACPR, POLST), a significant "Action Gap" persists. Frontline providers frequently perform futile CPR due to fear of litigation or family conflict—even when a valid DNACPR order is present.</p>
+              <h3 data-key="about_h3b">The Action Gap</h3>
+              <p data-key="about_p2">While many countries have established legal frameworks for non-resuscitation (DNACPR, POLST), a significant "Action Gap" persists. Frontline providers frequently perform futile CPR due to fear of litigation or family conflict—even when a valid DNACPR order is present.</p>
             </div>
           </div>
-
-          <div class="highlight-box">
-            <strong>Study Objective:</strong> To investigate and compare the decision-making patterns of prehospital EMS providers across different countries and cultural contexts when facing end-of-life care conflict scenarios, and to measure the frequency and intensity of associated moral distress.
-          </div>
-
-          <h3>Study Design Overview</h3>
-          <p>This is a cross-national, multi-center web-based survey. Three standardized clinical vignettes are presented to participants across three major cultural blocks. Outcome measures include decision choice (initiate vs. withhold CPR), moral distress intensity (MDS-EMS), legal confidence, and perceived systemic barriers.</p>
-
+          <div class="highlight-box" data-key="about_obj"><strong>Study Objective:</strong> To investigate and compare the decision-making patterns of prehospital EMS providers across different countries and cultural contexts when facing end-of-life care conflict scenarios, and to measure the frequency and intensity of associated moral distress.</div>
+          <h3 data-key="about_h3c">Study Design Overview</h3>
+          <p data-key="about_p3">This is a cross-national, multi-center web-based survey. Three standardized clinical vignettes are presented to participants across three major cultural blocks. Outcome measures include decision choice (initiate vs. withhold CPR), moral distress intensity (MDS-EMS), legal confidence, and perceived systemic barriers.</p>
           <!-- Survey CTA Banner -->
           <div class="survey-cta-banner">
             <div class="cta-text">
-              <h3>Are you an EMS provider? We need your voice.</h3>
-              <p>The survey takes 12&ndash;15 minutes and is fully anonymous. Available in 5 languages.</p>
+              <h3 data-key="cta_h3">Are you an EMS provider? We need your voice.</h3>
+              <p data-key="cta_p">The survey takes 8–10 minutes and is fully anonymous. Available in 5 languages.</p>
               <div class="cta-pills">
-                <span class="cta-pill">&#x23F1; 12&ndash;15 min</span>
-                <span class="cta-pill">&#x1F512; Anonymous</span>
-                <span class="cta-pill">&#x1F310; EN / &#20013;&#25991; / &#26085;&#26412;&#35486; / &#54620;&#44397;&#50612; / &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
-                <span class="cta-pill">&#x2713; IRB ECKIRB1150308</span>
+                <span class="cta-pill" data-key="cta_pill1">⏱ 8–10 min</span>
+                <span class="cta-pill" data-key="cta_pill2">🔒 Anonymous</span>
+                <span class="cta-pill">🌐 EN / 中文 / 日本語 / 한국어 / العربية</span>
+                <span class="cta-pill" data-key="cta_pill4">✓ IRB ECKIRB1150308</span>
               </div>
             </div>
-            <a class="btn-survey"
+            <a class="btn-survey" data-key="cta_btn"
                href="https://script.google.com/macros/s/AKfycbzL9yXMADWUZXdO6TCBUMqtI4mlUST6UmIvCn3VZZ1K67Qk-ts4jziGMHJhGeRCUm4_Mg/exec"
-               target="_blank" rel="noopener">
-              Take the Survey &rarr;
-            </a>
+               target="_blank" rel="noopener">Take the Survey →</a>
           </div>
-
         </div>
       </div>
     </section>
@@ -906,13 +902,14 @@
   </main>
 
   <footer>
-    <p><strong>The PEACE Study</strong> — Prehospital End-of-life Autonomy, Culture and Ethics</p>
-    <p>Approved by the Institutional Review Board &nbsp;|&nbsp; Approval No. ECKIRB1150308</p>
-    <p>Data strictly restricted to approved academic analysis. All rights reserved.</p>
-    <p>&copy; 2026 PEACE Study Global Consortium</p>
+    <p data-key="footer1"><strong>The PEACE Study</strong> — Prehospital End-of-life Autonomy, Culture and Ethics</p>
+    <p data-key="footer2">Approved by the Institutional Review Board &nbsp;|&nbsp; Approval No. ECKIRB1150308</p>
+    <p data-key="footer3">Data strictly restricted to approved academic analysis. All rights reserved.</p>
+    <p data-key="footer4">&copy; 2026 PEACE Study Global Consortium</p>
   </footer>
 
   <script>
+    // ── Page navigation ───────────────────────────────────────────────────
     function switchPage(pageId, btn) {
       document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
@@ -926,6 +923,87 @@
       document.querySelectorAll('.vignette-tab').forEach(t => t.classList.remove('active'));
       document.getElementById(vigId).classList.add('active');
       if (btn) btn.classList.add('active');
+    }
+
+    // ── Translation dictionary ─────────────────────────────────────────────
+    const T = {
+      en: {
+        nav_about: 'About Study',
+        nav_framework: 'Research Framework',
+        nav_consortium: 'Consortium & IRB',
+        nav_datahub: 'Data Hub',
+        hero_eyebrow: 'Cross-National EMS Research',
+        hero_h1: 'The PEACE Study',
+        hero_subtitle: 'Prehospital End-of-life Autonomy, Culture and Ethics',
+        hero_desc: 'A Multi-Center Study on Paramedic Decision-Making in End-of-Life Conflict Scenarios',
+        about_h3a: 'The Paradigm Shift',
+        about_p1: 'As global populations age, Emergency Medical Services (EMS) are shifting from a purely life-saving model to becoming the <em>gatekeepers</em> of community end-of-life care. Paramedics are often the first to encounter terminally ill patients in cardiac arrest—yet the decision to initiate or withhold resuscitation is rarely a purely clinical one.',
+        about_h3b: 'The Action Gap',
+        about_p2: 'While many countries have established legal frameworks for non-resuscitation (DNACPR, POLST), a significant "Action Gap" persists. Frontline providers frequently perform futile CPR due to fear of litigation or family conflict—even when a valid DNACPR order is present.',
+        about_obj: '<strong>Study Objective:</strong> To investigate and compare the decision-making patterns of prehospital EMS providers across different countries and cultural contexts when facing end-of-life care conflict scenarios, and to measure the frequency and intensity of associated moral distress.',
+        about_h3c: 'Study Design Overview',
+        about_p3: 'This is a cross-national, multi-center web-based survey. Three standardized clinical vignettes are presented to participants across three major cultural blocks. Outcome measures include decision choice (initiate vs. withhold CPR), moral distress intensity (MDS-EMS), legal confidence, and perceived systemic barriers.',
+        cta_h3: 'Are you an EMS provider? We need your voice.',
+        cta_p: 'The survey takes 8–10 minutes and is fully anonymous. Available in 5 languages.',
+        cta_pill1: '⏱ 8–10 min',
+        cta_pill2: '🔒 Anonymous',
+        cta_pill4: '✓ IRB ECKIRB1150308',
+        cta_btn: 'Take the Survey →',
+        footer1: '<strong>The PEACE Study</strong> — Prehospital End-of-life Autonomy, Culture and Ethics',
+        footer2: 'Approved by the Institutional Review Board &nbsp;|&nbsp; Approval No. ECKIRB1150308',
+        footer3: 'Data strictly restricted to approved academic analysis. All rights reserved.',
+        footer4: '&copy; 2026 PEACE Study Global Consortium',
+      },
+      zh: {
+        nav_about: '研究概覽',
+        nav_framework: '研究架構',
+        nav_consortium: '研究團隊與倫審',
+        nav_datahub: '收案進度',
+        hero_eyebrow: '跨國 EMS 研究',
+        hero_h1: 'PEACE 研究',
+        hero_subtitle: '院前臨終自主、文化與倫理',
+        hero_desc: '院前急救人員面對臨終衝突情境之決策行為多中心調查',
+        about_h3a: '典範轉移',
+        about_p1: '隨著全球人口高齡化，緊急醫療服務（EMS）正從純粹的生命搶救模式，轉型為社區臨終照護的<em>守門人</em>。救護人員往往是第一個遭遇末期病患心跳停止的現場人員，然而啟動或拒絕急救的決定，從來不是單純的臨床判斷。',
+        about_h3b: '執行落差',
+        about_p2: '雖然許多國家已建立拒絕急救的法律框架（如 DNACPR、POLST），卻仍存在顯著的「執行落差」。第一線救護員往往在有效 DNACPR 在場的情況下，仍因擔憂訴訟或家屬衝突而執行無效 CPR。',
+        about_obj: '<strong>研究目的：</strong>比較不同國家與文化背景的院前 EMS 人員，在面對臨終照護衝突情境時的決策模式，並量測相關道德困擾的頻率與強度。',
+        about_h3c: '研究設計概覽',
+        about_p3: '本研究採跨國多中心網路問卷設計，向三大文化區塊的受試者呈現三個標準化臨床情境，測量結果包含決策選擇（施行 vs. 拒絕 CPR）、道德困擾強度（MDS-EMS）、法律信心及系統性障礙。',
+        cta_h3: '您是院前急救人員嗎？我們需要您的聲音。',
+        cta_p: '問卷約需 8–10 分鐘，完全匿名，提供 5 種語言版本。',
+        cta_pill1: '⏱ 8–10 分鐘',
+        cta_pill2: '🔒 完全匿名',
+        cta_pill4: '✓ 倫審字號 ECKIRB1150308',
+        cta_btn: '立即填寫問卷 →',
+        footer1: '<strong>PEACE 研究</strong> — 院前臨終自主、文化與倫理',
+        footer2: '已通過人體研究倫理審查委員會核准 &nbsp;|&nbsp; 核准字號 ECKIRB1150308',
+        footer3: '資料嚴格限用於核准之學術分析。版權所有。',
+        footer4: '&copy; 2026 PEACE 研究全球聯盟',
+      }
+    };
+
+    // ── Language switch ────────────────────────────────────────────────────
+    let currentLang = 'en';
+
+    function switchLang(lang, btn) {
+      currentLang = lang;
+      // toggle button styles
+      document.querySelectorAll('.lang-switch-btn').forEach(b => b.classList.remove('active-lang'));
+      if (btn) btn.classList.add('active-lang');
+      // apply translations
+      const d = T[lang];
+      document.querySelectorAll('[data-key]').forEach(el => {
+        const key = el.getAttribute('data-key');
+        if (d[key] !== undefined) el.innerHTML = d[key];
+      });
+      // nav brand subtitle
+      document.querySelector('.nav-brand span').textContent =
+        lang === 'zh' ? '院前臨終自主、文化與倫理跨國研究' : 'Prehospital End-of-life Autonomy, Culture and Ethics';
+      // page title
+      document.title = lang === 'zh'
+        ? 'PEACE 研究 | 院前臨終決策跨國調查'
+        : 'The PEACE Study | End-of-Life Decisions in EMS';
     }
   </script>
 </body>
