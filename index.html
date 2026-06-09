@@ -4,7 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The PEACE Study | End-of-Life Decisions in EMS</title>
-  
+
+  <!-- ── Open Graph (FB, LINE, WhatsApp, LinkedIn) ───────────────── -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://drjackchang.github.io/peace/" />
+  <meta property="og:title"        content="The PEACE Study — Participate Now" />
+  <meta property="og:description"  content="An international study on how EMS providers decide when facing DNACPR conflict, family pressure, and physician overrides. 12–15 min · Anonymous · IRB approved (ECKIRB1150308)." />
+  <meta property="og:image"        content="https://drjackchang.github.io/peace/og-cover.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"       content="en_US" />
+  <meta property="og:site_name"    content="The PEACE Study" />
+
+  <!-- ── Twitter Card ────────────────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="The PEACE Study — Participate Now" />
+  <meta name="twitter:description" content="An international study on how EMS providers decide when facing DNACPR conflict. 12–15 min · Anonymous · IRB approved." />
+  <meta name="twitter:image"       content="https://drjackchang.github.io/peace/og-cover.png" />
+
+  <!-- ── General / SEO ───────────────────────────────────────────── -->
+  <meta name="description" content="An international study on how EMS providers decide when facing DNACPR conflict, family pressure, and physician overrides. 12–15 min · Anonymous · IRB approved (ECKIRB1150308)." />
+  <meta name="keywords"    content="EMS, DNACPR, end-of-life, paramedic, prehospital, survey, research, palliative care" />
+
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
   
@@ -489,6 +510,70 @@
     }
     .btn-academic:hover { background-color: var(--primary-color); }
 
+    /* ─── Survey CTA Banner ─── */
+    .survey-cta-banner {
+      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
+      border-radius: 8px;
+      padding: 2rem 2.5rem;
+      margin: 2rem 0 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .survey-cta-banner .cta-text h3 {
+      color: white;
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      margin: 0 0 0.35rem;
+      font-weight: 700;
+    }
+    .survey-cta-banner .cta-text p {
+      color: rgba(255,255,255,0.82);
+      font-size: 0.88rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+    .survey-cta-banner .cta-pills {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 0.6rem;
+    }
+    .survey-cta-banner .cta-pill {
+      background: rgba(255,255,255,0.18);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .btn-survey {
+      display: inline-block;
+      background: white;
+      color: var(--secondary-color);
+      padding: 0.85rem 2rem;
+      text-decoration: none;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border-radius: 5px;
+      white-space: nowrap;
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      flex-shrink: 0;
+    }
+    .btn-survey:hover {
+      background: #f0f4f8;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    @media (max-width: 600px) {
+      .survey-cta-banner { flex-direction: column; text-align: center; }
+      .survey-cta-banner .cta-pills { justify-content: center; }
+    }
+
     /* ─── Footer ─── */
     footer {
       background-color: var(--primary-color);
@@ -559,7 +644,26 @@
           </div>
 
           <h3>Study Design Overview</h3>
-          <p>This is a cross-national, multi-center web-based survey. Five standardized clinical vignettes are presented to participants across three major cultural blocks. Outcome measures include decision choice (initiate vs. withhold CPR), moral distress intensity (adapted Moral Distress Scale–Revised), and perceived systemic barriers.</p>
+          <p>This is a cross-national, multi-center web-based survey. Three standardized clinical vignettes are presented to participants across three major cultural blocks. Outcome measures include decision choice (initiate vs. withhold CPR), moral distress intensity (MDS-EMS), legal confidence, and perceived systemic barriers.</p>
+
+          <!-- Survey CTA Banner -->
+          <div class="survey-cta-banner">
+            <div class="cta-text">
+              <h3>Are you an EMS provider? We need your voice.</h3>
+              <p>The survey takes 12&ndash;15 minutes and is fully anonymous. Available in 5 languages.</p>
+              <div class="cta-pills">
+                <span class="cta-pill">&#x23F1; 12&ndash;15 min</span>
+                <span class="cta-pill">&#x1F512; Anonymous</span>
+                <span class="cta-pill">&#x1F310; EN / &#20013;&#25991; / &#26085;&#26412;&#35486; / &#54620;&#44397;&#50612; / &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</span>
+                <span class="cta-pill">&#x2713; IRB ECKIRB1150308</span>
+              </div>
+            </div>
+            <a class="btn-survey"
+               href="https://script.google.com/macros/s/AKfycbzL9yXMADWUZXdO6TCBUMqtI4mlUST6UmIvCn3VZZ1K67Qk-ts4jziGMHJhGeRCUm4_Mg/exec"
+               target="_blank" rel="noopener">
+              Take the Survey &rarr;
+            </a>
+          </div>
 
         </div>
       </div>
