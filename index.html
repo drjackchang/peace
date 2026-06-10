@@ -1,69 +1,3 @@
-
-Claude finished the response
-
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>The PEACE Study | End-of-Life Decisions in EMS</title> <!-- OG / Twitter / LINE preview --> <meta property="og:type" content="webs
-
-pasted
-
-幫我補齊所有頁面的中英文內容
-
-下午1:11
-我來檢視現有的翻譯字典，找出缺少中文翻譯的部分。
-
-現在讓我仔細對比 HTML 中所有 data-key 屬性，找出 zh 翻譯字典中缺少的項目。
-
-
-Ran 3 commands
-Ran 3 commands
-缺少 75 個中文翻譯條目（Research Framework、Consortium、Data Hub 三頁全部 + 所有情境劇本）。現在直接產出完整的補齊版本：
-
-
-Ran 2 commands
-Ran 2 commands
-現在把完整 HTML 輸出，把 zh:{} 字典裡的舊內容替換成完整版：
-
-
-Ran 2 commands
-Ran 2 commands
-全部 100 個 key 都已覆蓋，零遺漏。
-
-
-Presented file
-Presented file
-補齊完成。原本 zh 字典只有 25 個 key，其餘 75 個全部缺漏——Research Framework、Consortium & IRB、Data Hub 三頁的中文完全是空的。現在的修補內容：
-
-Research Framework 頁（新增 30 keys）
-
-頁面標題、方法說明段落
-三大文化群組標籤（儒家/中東/西方）
-5 個情境劇本的側欄標題與編號
-各情境欄位標籤（現場／文件／衝突／壓力／指揮／狀況）
-5 個情境的完整情境描述、衝突內文（含 conflict-badge HTML）
-Consortium & IRB 頁（新增 17 keys）
-
-倫審狀態說明框（含 IRB 核准字號徽章）
-台灣／沙國 PI 職稱、單位名稱
-日本／南韓／英國空缺佔位文字
-合作邀約段落與聯絡按鈕
-Data Hub 頁（新增 12 keys）
-
-統計檢力說明段落（含 HTML 強調標籤）
-三群組進度條標題（含目標數字 span）
-進度條狀態文字、各群組附注、頁腳說明
-
-Peace study
-Code · HTML 
-
-
-
-
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-
-
-raw
-Peace study · HTML
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -83,7 +17,7 @@ Peace study · HTML
   <meta name="twitter:description" content="An international study on DNACPR decision-making in EMS. 8–10 min · Anonymous · IRB approved." />
   <meta name="twitter:image"       content="https://drjackchang.github.io/peace/og-cover.png" />
   <meta name="description"         content="An international study on how EMS providers decide when facing DNACPR conflict. 8–10 min · Anonymous · IRB approved (ECKIRB1150308)." />
- 
+
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
   
@@ -100,9 +34,9 @@ Peace study · HTML
       --font-serif: 'Merriweather', serif;
       --font-sans: 'Open Sans', sans-serif;
     }
- 
+
     *, *::before, *::after { box-sizing: border-box; }
- 
+
     body {
       margin: 0;
       font-family: var(--font-sans);
@@ -110,12 +44,12 @@ Peace study · HTML
       background-color: var(--bg-color);
       line-height: 1.7;
     }
- 
+
     h1, h2, h3, h4 {
       font-family: var(--font-serif);
       color: var(--primary-color);
     }
- 
+
     .navbar {
       background-color: var(--primary-color);
       color: white;
@@ -128,7 +62,7 @@ Peace study · HTML
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0,0,0,0.25);
     }
- 
+
     .nav-brand {
       font-family: var(--font-serif);
       font-size: 1.35rem;
@@ -148,12 +82,12 @@ Peace study · HTML
       text-transform: uppercase;
       margin-top: 1px;
     }
- 
+
     .nav-links {
       display: flex;
       gap: 0.25rem;
     }
- 
+
     .nav-btn {
       background: none;
       border: none;
@@ -166,10 +100,10 @@ Peace study · HTML
       border-radius: 4px;
       letter-spacing: 0.3px;
     }
- 
+
     .nav-btn:hover { color: white; background: rgba(255,255,255,0.08); }
     .nav-btn.active { color: white; background: rgba(255,255,255,0.14); font-weight: 600; }
- 
+
     .hero-section {
       width: 100%;
       height: 420px;
@@ -190,7 +124,7 @@ Peace study · HTML
       text-align: center;
       padding: 0 2rem;
     }
- 
+
     .hero-eyebrow {
       font-family: var(--font-sans);
       font-size: 0.78rem;
@@ -200,14 +134,14 @@ Peace study · HTML
       margin-bottom: 1rem;
       font-weight: 600;
     }
- 
+
     .hero-section h1 {
       font-size: 3.2rem;
       margin: 0;
       color: white;
       letter-spacing: -0.5px;
     }
- 
+
     .hero-section .hero-subtitle {
       font-family: var(--font-serif);
       font-size: 1.05rem;
@@ -216,7 +150,7 @@ Peace study · HTML
       font-weight: 300;
       font-style: italic;
     }
- 
+
     .hero-section .hero-desc {
       font-family: var(--font-sans);
       font-size: 0.92rem;
@@ -226,7 +160,7 @@ Peace study · HTML
       text-transform: uppercase;
       font-weight: 600;
     }
- 
+
     .hero-divider {
       width: 48px;
       height: 2px;
@@ -234,22 +168,22 @@ Peace study · HTML
       margin: 1.25rem auto 0;
       opacity: 0.7;
     }
- 
+
     .main-content {
       max-width: 980px;
       margin: 0 auto 4rem auto;
       padding: 0 2rem;
       min-height: 70vh;
     }
- 
+
     .page-section { display: none; animation: fadeIn 0.35s ease-in-out; }
     .page-section.active { display: block; }
- 
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to   { opacity: 1; transform: translateY(0); }
     }
- 
+
     .section-header {
       background: white;
       border-bottom: 1px solid var(--border-color);
@@ -265,7 +199,7 @@ Peace study · HTML
       color: var(--text-muted);
       font-size: 0.92rem;
     }
- 
+
     .academic-card {
       background: var(--card-bg);
       border: 1px solid var(--border-color);
@@ -274,7 +208,7 @@ Peace study · HTML
       border-radius: 6px;
       box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     }
- 
+
     .academic-card h2 {
       margin-top: 0;
       padding-bottom: 0.6rem;
@@ -282,14 +216,14 @@ Peace study · HTML
       margin-bottom: 1.75rem;
       font-size: 1.65rem;
     }
- 
+
     .academic-card h3 {
       font-size: 1.15rem;
       margin-top: 2rem;
       margin-bottom: 0.5rem;
       color: var(--secondary-color);
     }
- 
+
     .highlight-box {
       background-color: #eef4fb;
       border-left: 4px solid var(--secondary-color);
@@ -301,7 +235,7 @@ Peace study · HTML
       border-radius: 0 4px 4px 0;
       line-height: 1.8;
     }
- 
+
     .intro-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -325,7 +259,7 @@ Peace study · HTML
       color: var(--text-muted);
     }
     .intro-block p { margin: 0; font-size: 0.92rem; line-height: 1.75; }
- 
+
     .vignette-container {
       display: flex;
       gap: 1.5rem;
@@ -337,7 +271,7 @@ Peace study · HTML
       flex-direction: column;
       gap: 4px;
     }
- 
+
     .vignette-tab {
       background: white;
       border: 1px solid var(--border-color);
@@ -366,7 +300,7 @@ Peace study · HTML
       letter-spacing: 0.5px;
       text-transform: uppercase;
     }
- 
+
     .vignette-content-box {
       flex: 1;
       background: white;
@@ -374,10 +308,10 @@ Peace study · HTML
       padding: 2rem;
       border-radius: 4px;
     }
- 
+
     .v-content { display: none; }
     .v-content.active { display: block; animation: fadeIn 0.3s; }
- 
+
     .v-content h4 {
       margin-top: 0;
       font-size: 1.1rem;
@@ -385,7 +319,7 @@ Peace study · HTML
       padding-bottom: 0.75rem;
       border-bottom: 1px solid var(--border-color);
     }
- 
+
     .v-row {
       display: grid;
       grid-template-columns: 90px 1fr;
@@ -403,7 +337,7 @@ Peace study · HTML
       padding-top: 2px;
     }
     .v-row p { margin: 0; line-height: 1.65; }
- 
+
     .conflict-badge {
       display: inline-block;
       background: #fff3f3;
@@ -417,7 +351,7 @@ Peace study · HTML
       text-transform: uppercase;
       margin-bottom: 0.4rem;
     }
- 
+
     .cohort-tags {
       display: flex;
       gap: 1rem;
@@ -442,14 +376,14 @@ Peace study · HTML
       display: block;
       margin-bottom: 1px;
     }
- 
+
     .consortium-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.25rem;
       margin-top: 1.5rem;
     }
- 
+
     .investigator-card {
       border: 1px solid var(--border-color);
       background: white;
@@ -458,7 +392,7 @@ Peace study · HTML
     }
     .investigator-card.pi { border-top: 3px solid var(--secondary-color); }
     .investigator-card.placeholder { background: #fafafa; }
- 
+
     .investigator-card h4 { margin: 0.5rem 0 0.25rem; font-size: 1.05rem; }
     .investigator-card .role {
       font-size: 0.75rem;
@@ -478,9 +412,9 @@ Peace study · HTML
       margin: 0 0 0.25rem;
     }
     .investigator-card p { margin: 0.2rem 0; font-size: 0.88rem; color: var(--text-muted); }
- 
+
     .fi { font-size: 1.15rem; border-radius: 2px; }
- 
+
     .irb-badge {
       display: inline-block;
       margin-top: 0.6rem;
@@ -493,7 +427,7 @@ Peace study · HTML
       font-weight: 600;
       letter-spacing: 0.5px;
     }
- 
+
     .recruitment-block { margin-bottom: 2rem; }
     .recruitment-block h4 {
       font-family: var(--font-sans);
@@ -536,7 +470,7 @@ Peace study · HTML
       color: var(--text-muted);
       margin-top: 0.25rem;
     }
- 
+
     .btn-academic {
       display: inline-block;
       background-color: var(--secondary-color);
@@ -553,7 +487,7 @@ Peace study · HTML
       letter-spacing: 0.3px;
     }
     .btn-academic:hover { background-color: var(--primary-color); }
- 
+
     footer {
       background-color: var(--primary-color);
       color: #6b8aa8;
@@ -564,7 +498,7 @@ Peace study · HTML
       line-height: 1.9;
     }
     footer strong { color: #94aec8; }
- 
+
     @media (max-width: 768px) {
       .navbar { flex-direction: column; gap: 0.75rem; padding: 1rem; }
       .nav-links { flex-wrap: wrap; justify-content: center; }
@@ -573,7 +507,7 @@ Peace study · HTML
       .vignette-menu { flex: none; }
       .intro-grid { grid-template-columns: 1fr; }
     }
- 
+
     .lang-switch-btn {
       background: rgba(255,255,255,0.1);
       border: 1px solid rgba(255,255,255,0.25);
@@ -589,7 +523,7 @@ Peace study · HTML
     }
     .lang-switch-btn:hover { background: rgba(255,255,255,0.18); color: white; }
     .lang-switch-btn.active-lang { background: rgba(255,255,255,0.22); color: white; font-weight: 600; border-color: rgba(255,255,255,0.45); }
- 
+
     .survey-cta-banner {
       background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
       border-radius: 8px;
@@ -647,7 +581,7 @@ Peace study · HTML
   </style>
 </head>
 <body>
- 
+
   <nav class="navbar">
     <a class="nav-brand" onclick="switchPage('about', document.querySelector('.nav-btn'))">
       The PEACE Study
@@ -664,7 +598,7 @@ Peace study · HTML
       <button class="lang-switch-btn" onclick="switchLang('zh',this)" id="btn_zh">中文</button>
     </div>
   </nav>
- 
+
   <header class="hero-section">
     <p class="hero-eyebrow" data-key="hero_eyebrow">Cross-National EMS Research</p>
     <h1 data-key="hero_h1">The PEACE Study</h1>
@@ -672,9 +606,9 @@ Peace study · HTML
     <div class="hero-divider"></div>
     <p class="hero-desc" data-key="hero_desc">A Multi-Center Study on Paramedic Decision-Making in End-of-Life Conflict Scenarios</p>
   </header>
- 
+
   <main class="main-content">
- 
+
     <!-- ═══ ABOUT ═══ -->
     <section id="about" class="page-section active">
       <div style="padding: 2.5rem 0 1.5rem;">
@@ -710,14 +644,14 @@ Peace study · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- ═══ FRAMEWORK ═══ -->
     <section id="framework" class="page-section">
       <div style="padding: 2.5rem 0 1.5rem;">
         <div class="academic-card">
           <h2 data-key="fw_h2">Research Framework &amp; Methodology</h2>
           <p data-key="fw_p1">This study employs a cross-national, multi-center web-based survey design. Participants are stratified into three major cultural cohorts to examine how distinct societal frameworks—such as family-centric filial piety versus individual patient autonomy—alter clinical decision paths.</p>
- 
+
           <div class="cohort-tags">
             <div class="cohort-tag a">
               <span class="tag-label" data-key="fw_grpA_label">Group A · Confucian</span>
@@ -732,10 +666,10 @@ Peace study · HTML
               <span data-key="fw_grpC_countries">UK · USA · Australia · Canada</span>
             </div>
           </div>
- 
+
           <h3 data-key="fw_vig_h3">Core Clinical Vignettes</h3>
           <p data-key="fw_vig_p">The experimental core features 3 standardized, realistic clinical dilemmas. Select a scenario to view the structural parameters and the ethical tension being examined.</p>
- 
+
           <div class="vignette-container">
             <div class="vignette-menu">
               <button class="vignette-tab active" onclick="switchVig('vig1', this)">
@@ -750,16 +684,9 @@ Peace study · HTML
                 <span class="tab-num" data-key="fw_s3_num">Scenario 3</span>
                 <span data-key="fw_s3_title">System &amp; Public Pressure</span>
               </button>
-              <button class="vignette-tab" onclick="switchVig('vig4', this)">
-                <span class="tab-num" data-key="fw_s4_num">Scenario 4</span>
-                <span data-key="fw_s4_title">Authority Conflict</span>
-              </button>
-              <button class="vignette-tab" onclick="switchVig('vig5', this)">
-                <span class="tab-num" data-key="fw_s5_num">Scenario 5</span>
-                <span data-key="fw_s5_title">Terminal Discharge Culture</span>
-              </button>
+
             </div>
- 
+
             <div class="vignette-content-box">
               <div id="vig1" class="v-content active">
                 <h4 data-key="v1_h4">Scenario 1 — Valid DNACPR vs. Family Conflict</h4>
@@ -776,7 +703,7 @@ Peace study · HTML
                   <p data-key="v1_conflict"><span class="conflict-badge">Family vs. Document</span><br>The patient's son is extremely emotional and aggressively demands: <em>"Save my father! Do CPR now or I will sue you!"</em></p>
                 </div>
               </div>
- 
+
               <div id="vig2" class="v-content">
                 <h4 data-key="v2_h4">Scenario 2 — No Document vs. "Let Her Go"</h4>
                 <div class="v-row">
@@ -792,7 +719,7 @@ Peace study · HTML
                   <p data-key="v2_conflict"><span class="conflict-badge">No Document · Family Request</span><br>The family calmly states: <em>"She has suffered enough. We all agreed to let her go. Please do not torture her with CPR."</em></p>
                 </div>
               </div>
- 
+
               <div id="vig3" class="v-content">
                 <h4 data-key="v3_h4">Scenario 3 — System Pressure &amp; Public Scrutiny</h4>
                 <div class="v-row">
@@ -808,50 +735,23 @@ Peace study · HTML
                   <p data-key="v3_pressure">Dispatch orders: <em>"The scene is getting out of control. Disregard the DNACPR. Start CPR and transport immediately to clear the scene."</em></p>
                 </div>
               </div>
- 
-              <div id="vig4" class="v-content">
-                <h4 data-key="v4_h4">Scenario 4 — Authority Conflict (Physician Order)</h4>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_scene">Scene</span>
-                  <p data-key="v4_scene">A cancer patient is in cardiac arrest. You have confirmed a valid DNACPR on scene and judge clinically that resuscitation would be futile.</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_authority">Authority</span>
-                  <p data-key="v4_authority"><span class="conflict-badge">Medical Direction Override</span><br>Online Medical Direction states: <em>"I don't want legal risk tonight. Disregard the DNACPR. Start resuscitation and bring the patient in."</em></p>
-                </div>
-              </div>
- 
-              <div id="vig5" class="v-content">
-                <h4 data-key="v5_h4">Scenario 5 — The "Terminal Discharge" Culture</h4>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_scene">Scene</span>
-                  <p data-key="v5_scene">A patient was discharged from hospital 3 hours ago specifically to <em>die at home</em>—a recognized cultural and religious custom.</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_status">Status</span>
-                  <p data-key="v5_status">The patient stops breathing. Family panics and calls EMS. No DNACPR paper is presented, but the hospital discharge note clearly states "Terminal Discharge."</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_conflict">Conflict</span>
-                  <p data-key="v5_conflict"><span class="conflict-badge">Cultural Custom · No Document</span><br>The family is distressed but not aggressive, and does not explicitly ask for resuscitation.</p>
-                </div>
-              </div>
+
             </div>
           </div>
         </div>
       </div>
     </section>
- 
+
     <!-- ═══ CONSORTIUM ═══ -->
     <section id="consortium" class="page-section">
       <div style="padding: 2.5rem 0 1.5rem;">
         <div class="academic-card">
           <h2 data-key="cs_h2">Global Consortium &amp; Ethical Approval</h2>
- 
+
           <div class="highlight-box" data-key="cs_irb"><strong>Institutional Review Board (IRB) Status:</strong><br>
             This study protocol, data security plan, and cross-national informed consent structure have been formally reviewed and <u>approved</u> by the Ethics Committee.<br>
             <span class="irb-badge">Approval No. ECKIRB1150308</span></div>
- 
+
           <h3 data-key="cs_pi_h3">Principal Investigators — Lead Sites</h3>
           <div class="consortium-grid">
             <div class="investigator-card pi">
@@ -869,10 +769,10 @@ Peace study · HTML
               <p data-key="cs_sa_inst">Imam Abdulrahman Bin Faisal University</p>
             </div>
           </div>
- 
+
           <h3 style="margin-top: 2.5rem;" data-key="cs_coord_h3">National Coordinators — Partner Sites</h3>
           <p style="font-size: 0.9rem; color: var(--text-muted);" data-key="cs_coord_p">National Coordinators lead in-country data collection and contribute to manuscript co-authorship. We are actively expanding our international network.</p>
- 
+
           <div class="consortium-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
             <div class="investigator-card placeholder">
               <span class="role"><span class="fi fi-jp"></span> <span data-key="cs_jp_country">Japan</span></span>
@@ -890,7 +790,7 @@ Peace study · HTML
               <p data-key="cs_inst_tbd">[Institution TBD]</p>
             </div>
           </div>
- 
+
           <div style="margin-top: 3rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color);">
             <p style="color: var(--text-muted); font-size: 0.92rem;" data-key="cs_join_p">Interested in joining the consortium as a National Lead?</p>
             <a href="mailto:yutung@ntunhs.edu.tw" class="btn-academic" data-key="cs_join_btn">Contact the PI to Collaborate</a>
@@ -898,14 +798,14 @@ Peace study · HTML
         </div>
       </div>
     </section>
- 
+
     <!-- ═══ DATA HUB ═══ -->
     <section id="datahub" class="page-section">
       <div style="padding: 2.5rem 0 1.5rem;">
         <div class="academic-card">
           <h2 data-key="dh_h2">Data Hub &amp; Recruitment Status</h2>
           <p data-key="dh_p1">To ensure robust statistical power for multivariate modeling (ANOVAs and multiple logistic regression), the study requires a minimum of <strong>300 valid responses per cultural block</strong>. The overall global recruitment target is <strong>1,000–1,500</strong> frontline participants.</p>
- 
+
           <div style="margin-top: 2.5rem;">
             <div class="recruitment-block">
               <h4 data-key="dh_grpA_h4">Group A — Confucian Cultural Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span></h4>
@@ -914,7 +814,7 @@ Peace study · HTML
               </div>
               <p class="progress-meta" data-key="dh_grpA_meta">Taiwan · South Korea · Japan</p>
             </div>
- 
+
             <div class="recruitment-block">
               <h4 data-key="dh_grpB_h4">Group B — Middle Eastern Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span></h4>
               <div class="progress-track">
@@ -922,7 +822,7 @@ Peace study · HTML
               </div>
               <p class="progress-meta" data-key="dh_grpB_meta">Saudi Arabia · Jordan</p>
             </div>
- 
+
             <div class="recruitment-block">
               <h4 data-key="dh_grpC_h4">Group C — Western Control Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span></h4>
               <div class="progress-track">
@@ -931,23 +831,23 @@ Peace study · HTML
               <p class="progress-meta" data-key="dh_grpC_meta">UK · USA · Australia · Canada — National Coordinator position open</p>
             </div>
           </div>
- 
+
           <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);" data-key="dh_footnote">
             * Precise enrollment metrics will be published here upon completion of Phase 2 (Data Collection). All data are handled in accordance with IRB-approved protocols and cross-national data protection standards.
           </p>
         </div>
       </div>
     </section>
- 
+
   </main>
- 
+
   <footer>
     <p data-key="footer1"><strong>The PEACE Study</strong> — Prehospital End-of-life Autonomy, Culture and Ethics</p>
     <p data-key="footer2">Approved by the Institutional Review Board &nbsp;|&nbsp; Approval No. ECKIRB1150308</p>
     <p data-key="footer3">Data strictly restricted to approved academic analysis. All rights reserved.</p>
     <p data-key="footer4">&copy; 2026 PEACE Study Global Consortium</p>
   </footer>
- 
+
   <script>
     function switchPage(pageId, btn) {
       document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
@@ -956,14 +856,14 @@ Peace study · HTML
       if (btn) btn.classList.add('active');
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
- 
+
     function switchVig(vigId, btn) {
       document.querySelectorAll('.v-content').forEach(c => c.classList.remove('active'));
       document.querySelectorAll('.vignette-tab').forEach(t => t.classList.remove('active'));
       document.getElementById(vigId).classList.add('active');
       if (btn) btn.classList.add('active');
     }
- 
+
     const T = {
       en: {
         nav_about: 'About Study',
@@ -1001,8 +901,7 @@ Peace study · HTML
         fw_s1_num: 'Scenario 1', fw_s1_title: 'Valid DNACPR vs. Family',
         fw_s2_num: 'Scenario 2', fw_s2_title: 'No Document vs. "Let Her Go"',
         fw_s3_num: 'Scenario 3', fw_s3_title: 'System &amp; Public Pressure',
-        fw_s4_num: 'Scenario 4', fw_s4_title: 'Authority Conflict',
-        fw_s5_num: 'Scenario 5', fw_s5_title: 'Terminal Discharge Culture',
+
         lbl_scene: 'Scene', lbl_document: 'Document', lbl_conflict: 'Conflict',
         lbl_pressure: 'Pressure', lbl_authority: 'Authority', lbl_status: 'Status',
         v1_h4: 'Scenario 1 — Valid DNACPR vs. Family Conflict',
@@ -1017,13 +916,7 @@ Peace study · HTML
         v3_scene: 'A terminally ill patient goes into cardiac arrest in a semi-public area. The spouse presents a valid DNACPR and asks you to let the patient pass peacefully.',
         v3_conflict: '<span class="conflict-badge">Public · Media · Dispatch</span><br>The adult son arrives furious, ignores the DNACPR, demands CPR, and begins filming while shouting accusations. A crowd gathers.',
         v3_pressure: 'Dispatch orders: <em>"The scene is getting out of control. Disregard the DNACPR. Start CPR and transport immediately to clear the scene."</em>',
-        v4_h4: 'Scenario 4 — Authority Conflict (Physician Order)',
-        v4_scene: 'A cancer patient is in cardiac arrest. You have confirmed a valid DNACPR on scene and judge clinically that resuscitation would be futile.',
-        v4_authority: '<span class="conflict-badge">Medical Direction Override</span><br>Online Medical Direction states: <em>"I don\'t want legal risk tonight. Disregard the DNACPR. Start resuscitation and bring the patient in."</em>',
-        v5_h4: 'Scenario 5 — The "Terminal Discharge" Culture',
-        v5_scene: 'A patient was discharged from hospital 3 hours ago specifically to <em>die at home</em>—a recognized cultural and religious custom.',
-        v5_status: 'The patient stops breathing. Family panics and calls EMS. No DNACPR paper is presented, but the hospital discharge note clearly states "Terminal Discharge."',
-        v5_conflict: '<span class="conflict-badge">Cultural Custom · No Document</span><br>The family is distressed but not aggressive, and does not explicitly ask for resuscitation.',
+
         cs_h2: 'Global Consortium &amp; Ethical Approval',
         cs_irb: '<strong>Institutional Review Board (IRB) Status:</strong><br>This study protocol, data security plan, and cross-national informed consent structure have been formally reviewed and <u>approved</u> by the Ethics Committee.<br><span class="irb-badge">Approval No. ECKIRB1150308</span>',
         cs_pi_h3: 'Principal Investigators — Lead Sites', cs_pi_role: 'Co-Principal Investigator',
@@ -1049,7 +942,7 @@ Peace study · HTML
         dh_grpC_meta: 'UK · USA · Australia · Canada — National Coordinator position open',
         dh_footnote: '* Precise enrollment metrics will be published here upon completion of Phase 2 (Data Collection). All data are handled in accordance with IRB-approved protocols and cross-national data protection standards.',
       },
- 
+
       zh: {
         // ── Navigation ──
         nav_about: '研究概覽',
@@ -1098,10 +991,6 @@ Peace study · HTML
         fw_s2_title: '無文件 vs.「讓她走」',
         fw_s3_num: '情境三',
         fw_s3_title: '系統壓力與公眾審視',
-        fw_s4_num: '情境四',
-        fw_s4_title: '權威衝突',
-        fw_s5_num: '情境五',
-        fw_s5_title: '返家善終文化',
         // ── Vignette labels ──
         lbl_scene: '現場',
         lbl_document: '文件',
@@ -1124,15 +1013,6 @@ Peace study · HTML
         v3_scene: '一名末期病患在半公開場所發生心跳停止。配偶出示有效 DNACPR，請求讓患者安詳離去。',
         v3_conflict: '<span class="conflict-badge">公眾 · 媒體 · 派遣</span><br>成年之子憤怒趕到，無視 DNACPR，要求施行 CPR，並開始拍攝並高聲指責，圍觀群眾逐漸聚集。',
         v3_pressure: '勤務中心下令：<em>「現場已失控。不理會 DNACPR，立即施行 CPR 並後送以清空現場。」</em>',
-        // ── Vignette 4 ──
-        v4_h4: '情境四 — 權威衝突（醫師指令）',
-        v4_scene: '一名癌症患者心跳停止。您已在現場確認有效 DNACPR，並臨床判斷急救已屬無效。',
-        v4_authority: '<span class="conflict-badge">線上醫療指導介入</span><br>線上醫師指示：<em>「我今晚不想承擔法律風險。不理會 DNACPR，啟動急救並把患者送來。」</em>',
-        // ── Vignette 5 ──
-        v5_h4: '情境五 —「返家善終」文化',
-        v5_scene: '患者 3 小時前剛從醫院出院，目的即是<em>在家中離世</em>——這是當地普遍認同的文化與宗教習俗。',
-        v5_status: '患者停止呼吸，家屬驚慌並撥打 119。現場未出示 DNACPR 文件，但出院記錄單上明確記載「安寧返家」。',
-        v5_conflict: '<span class="conflict-badge">文化習俗 · 無文件</span><br>家屬情緒悲痛，但並無攻擊性，且未明確要求施行急救。',
         // ── Consortium ──
         cs_h2: '全球研究聯盟與倫理審查',
         cs_irb: '<strong>人體研究倫理審查委員會（IRB）狀態：</strong><br>本研究計畫書、資料安全計畫及跨國知情同意架構已經倫理審查委員會正式審閱並<u>核准</u>。<br><span class="irb-badge">核准字號 ECKIRB1150308</span>',
@@ -1167,9 +1047,9 @@ Peace study · HTML
         dh_footnote: '* 精確收案數字將於第二階段（資料蒐集）完成後公布於此。所有資料依據 IRB 核准之規程及跨國個資保護標準進行處理。',
       }
     };
- 
+
     let currentLang = 'en';
- 
+
     function switchLang(lang, btn) {
       currentLang = lang;
       document.querySelectorAll('.lang-switch-btn').forEach(b => b.classList.remove('active-lang'));
@@ -1188,4 +1068,3 @@ Peace study · HTML
   </script>
 </body>
 </html>
- 
