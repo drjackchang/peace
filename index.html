@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>The PEACE Study | End-of-Life Decisions in EMS</title>
-  
+  <meta name="theme-color" content="#002147">
+
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://drjackchang.github.io/peace/" />
   <meta property="og:title"        content="The PEACE Study — Participate Now" />
@@ -18,1080 +19,249 @@
   <meta name="twitter:image"       content="https://drjackchang.github.io/peace/og-cover.png" />
   <meta name="description"         content="An international study on how EMS providers decide when facing DNACPR conflict. 8–10 min · Anonymous · IRB approved (ECKIRB1150308)." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
-  
-  <style>
-    :root {
-      --primary-color: #002147;
-      --secondary-color: #1a5276;
-      --accent-color: #1a6b6b;
-      --bg-color: #f5f7f9;
-      --text-main: #2d3748;
-      --text-muted: #64748b;
-      --border-color: #dde3ea;
-      --card-bg: #ffffff;
-      --font-serif: 'Merriweather', serif;
-      --font-sans: 'Open Sans', sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: var(--font-sans);
-      color: var(--text-main);
-      background-color: var(--bg-color);
-      line-height: 1.7;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: var(--font-serif);
-      color: var(--primary-color);
-    }
-
-    .navbar {
-      background-color: var(--primary-color);
-      color: white;
-      padding: 0.9rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
-    }
-
-    .nav-brand {
-      font-family: var(--font-serif);
-      font-size: 1.35rem;
-      font-weight: 700;
-      letter-spacing: 0.3px;
-      cursor: pointer;
-      color: white;
-      text-decoration: none;
-    }
-    .nav-brand span {
-      font-size: 0.78rem;
-      font-family: var(--font-sans);
-      font-weight: 400;
-      color: #94aec8;
-      display: block;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin-top: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 0.25rem;
-    }
-
-    .nav-btn {
-      background: none;
-      border: none;
-      color: #a8c0d6;
-      font-family: var(--font-sans);
-      font-size: 0.88rem;
-      cursor: pointer;
-      padding: 0.45rem 0.9rem;
-      transition: all 0.25s ease;
-      border-radius: 4px;
-      letter-spacing: 0.3px;
-    }
-
-    .nav-btn:hover { color: white; background: rgba(255,255,255,0.08); }
-    .nav-btn.active { color: white; background: rgba(255,255,255,0.14); font-weight: 600; }
-
-    .hero-section {
-      width: 100%;
-      height: 420px;
-      background-image:
-        linear-gradient(
-          to bottom,
-          rgba(0, 28, 60, 0.72) 0%,
-          rgba(0, 40, 80, 0.58) 50%,
-          rgba(0, 28, 60, 0.78) 100%
-        ),
-        url('https://images.unsplash.com/photo-1576765608869-5db8e34c6e1d?q=85&w=2400&auto=format&fit=crop&ixlib=rb-4.0.3');
-      background-size: cover;
-      background-position: center 40%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 2rem;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--font-sans);
-      font-size: 0.78rem;
-      color: #7ec8e3;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-
-    .hero-section h1 {
-      font-size: 3.2rem;
-      margin: 0;
-      color: white;
-      letter-spacing: -0.5px;
-    }
-
-    .hero-section .hero-subtitle {
-      font-family: var(--font-serif);
-      font-size: 1.05rem;
-      color: #c8dae8;
-      margin-top: 0.75rem;
-      font-weight: 300;
-      font-style: italic;
-    }
-
-    .hero-section .hero-desc {
-      font-family: var(--font-sans);
-      font-size: 0.92rem;
-      color: #94aec8;
-      margin-top: 1.5rem;
-      letter-spacing: 1.8px;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    .hero-divider {
-      width: 48px;
-      height: 2px;
-      background: #7ec8e3;
-      margin: 1.25rem auto 0;
-      opacity: 0.7;
-    }
-
-    .main-content {
-      max-width: 980px;
-      margin: 0 auto 4rem auto;
-      padding: 0 2rem;
-      min-height: 70vh;
-    }
-
-    .page-section { display: none; animation: fadeIn 0.35s ease-in-out; }
-    .page-section.active { display: block; }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(8px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
-    .section-header {
-      background: white;
-      border-bottom: 1px solid var(--border-color);
-      padding: 2.5rem 0 1.5rem;
-      margin-bottom: 2rem;
-    }
-    .section-header h2 {
-      margin: 0 0 0.25rem;
-      font-size: 1.9rem;
-    }
-    .section-header p {
-      margin: 0;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    .academic-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border-color);
-      padding: 2.5rem;
-      margin-bottom: 1.5rem;
-      border-radius: 6px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
-    }
-
-    .academic-card h2 {
-      margin-top: 0;
-      padding-bottom: 0.6rem;
-      border-bottom: 2px solid var(--border-color);
-      margin-bottom: 1.75rem;
-      font-size: 1.65rem;
-    }
-
-    .academic-card h3 {
-      font-size: 1.15rem;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--secondary-color);
-    }
-
-    .highlight-box {
-      background-color: #eef4fb;
-      border-left: 4px solid var(--secondary-color);
-      padding: 1.25rem 1.5rem;
-      margin: 1.5rem 0;
-      font-family: var(--font-serif);
-      font-size: 0.9rem;
-      color: #1a3a5c;
-      border-radius: 0 4px 4px 0;
-      line-height: 1.8;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-      margin: 2rem 0;
-    }
-    .intro-block {
-      padding: 1.5rem;
-      border-radius: 6px;
-      border: 1px solid var(--border-color);
-    }
-    .intro-block.paradigm { border-top: 3px solid var(--secondary-color); }
-    .intro-block.action   { border-top: 3px solid var(--accent-color); }
-    .intro-block h3 {
-      margin: 0 0 0.75rem;
-      font-size: 1rem;
-      font-family: var(--font-sans);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--text-muted);
-    }
-    .intro-block p { margin: 0; font-size: 0.92rem; line-height: 1.75; }
-
-    .vignette-container {
-      display: flex;
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .vignette-menu {
-      flex: 0 0 200px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .vignette-tab {
-      background: white;
-      border: 1px solid var(--border-color);
-      text-align: left;
-      padding: 0.85rem 1rem;
-      font-family: var(--font-sans);
-      font-size: 0.85rem;
-      cursor: pointer;
-      color: var(--text-main);
-      transition: 0.2s;
-      border-radius: 4px;
-      line-height: 1.4;
-    }
-    .vignette-tab:hover { background: #f0f4f8; }
-    .vignette-tab.active {
-      background: var(--primary-color);
-      color: white;
-      border-color: var(--primary-color);
-      font-weight: 600;
-    }
-    .vignette-tab .tab-num {
-      display: block;
-      font-size: 0.72rem;
-      opacity: 0.6;
-      margin-bottom: 2px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-
-    .vignette-content-box {
-      flex: 1;
-      background: white;
-      border: 1px solid var(--border-color);
-      padding: 2rem;
-      border-radius: 4px;
-    }
-
-    .v-content { display: none; }
-    .v-content.active { display: block; animation: fadeIn 0.3s; }
-
-    .v-content h4 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      color: var(--primary-color);
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .v-row {
-      display: grid;
-      grid-template-columns: 90px 1fr;
-      gap: 0.5rem;
-      align-items: baseline;
-      margin: 0.75rem 0;
-      font-size: 0.91rem;
-    }
-    .v-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--text-muted);
-      padding-top: 2px;
-    }
-    .v-row p { margin: 0; line-height: 1.65; }
-
-    .conflict-badge {
-      display: inline-block;
-      background: #fff3f3;
-      border: 1px solid #f5c6c6;
-      color: #8b1a1a;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.2rem 0.6rem;
-      border-radius: 3px;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 0.4rem;
-    }
-
-    .cohort-tags {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin: 1.5rem 0;
-    }
-    .cohort-tag {
-      padding: 0.6rem 1.25rem;
-      border-radius: 4px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      border: 1px solid;
-    }
-    .cohort-tag.a { background: #eef4fb; color: #1a3a5c; border-color: #b8d0e8; }
-    .cohort-tag.b { background: #f0f7f0; color: #1a3a1a; border-color: #b0d4b0; }
-    .cohort-tag.c { background: #f7f4ee; color: #3a2a0a; border-color: #d4c090; }
-    .cohort-tag .tag-label {
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      opacity: 0.7;
-      display: block;
-      margin-bottom: 1px;
-    }
-
-    .consortium-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin-top: 1.5rem;
-    }
-
-    .investigator-card {
-      border: 1px solid var(--border-color);
-      background: white;
-      padding: 1.5rem;
-      border-radius: 6px;
-    }
-    .investigator-card.pi { border-top: 3px solid var(--secondary-color); }
-    .investigator-card.placeholder { background: #fafafa; }
-
-    .investigator-card h4 { margin: 0.5rem 0 0.25rem; font-size: 1.05rem; }
-    .investigator-card .role {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.75rem;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-weight: 600;
-    }
-    .investigator-card .pi-title {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--secondary-color);
-      margin: 0 0 0.25rem;
-    }
-    .investigator-card p { margin: 0.2rem 0; font-size: 0.88rem; color: var(--text-muted); }
-
-    .fi { font-size: 1.15rem; border-radius: 2px; }
-
-    .irb-badge {
-      display: inline-block;
-      margin-top: 0.6rem;
-      padding: 0.3rem 0.75rem;
-      background: var(--primary-color);
-      color: white;
-      border-radius: 3px;
-      font-family: var(--font-sans);
-      font-size: 0.82rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .recruitment-block { margin-bottom: 2rem; }
-    .recruitment-block h4 {
-      font-family: var(--font-sans);
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin: 0 0 0.35rem;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .progress-track {
-      background: #e8edf2;
-      height: 22px;
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-    }
-    .progress-fill {
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding-left: 10px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: white;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
-      transition: width 0.6s ease;
-    }
-    .progress-fill.active-fill { background: var(--secondary-color); }
-    .progress-fill.pending-fill {
-      background: transparent;
-      color: var(--text-muted);
-      font-weight: 600;
-      padding-left: 0;
-      justify-content: center;
-    }
-    .progress-meta {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      margin-top: 0.25rem;
-    }
-
-    .btn-academic {
-      display: inline-block;
-      background-color: var(--secondary-color);
-      color: white;
-      padding: 0.7rem 1.5rem;
-      text-decoration: none;
-      font-family: var(--font-sans);
-      font-weight: 600;
-      font-size: 0.88rem;
-      transition: background 0.25s;
-      border: none;
-      cursor: pointer;
-      border-radius: 4px;
-      letter-spacing: 0.3px;
-    }
-    .btn-academic:hover { background-color: var(--primary-color); }
-
-    footer {
-      background-color: var(--primary-color);
-      color: #6b8aa8;
-      text-align: center;
-      padding: 2.5rem 2rem;
-      margin-top: 4rem;
-      font-size: 0.82rem;
-      line-height: 1.9;
-    }
-    footer strong { color: #94aec8; }
-
-    @media (max-width: 768px) {
-      .navbar { flex-direction: column; gap: 0.75rem; padding: 1rem; }
-      .nav-links { flex-wrap: wrap; justify-content: center; }
-      .hero-section h1 { font-size: 2.2rem; }
-      .vignette-container { flex-direction: column; }
-      .vignette-menu { flex: none; }
-      .intro-grid { grid-template-columns: 1fr; }
-    }
-
-    .lang-switch-btn {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.25);
-      color: #a8c0d6;
-      font-family: var(--font-sans);
-      font-size: 0.82rem;
-      cursor: pointer;
-      padding: 0.38rem 0.85rem;
-      border-radius: 4px;
-      transition: all 0.2s;
-      letter-spacing: 0.3px;
-      margin-left: 0.5rem;
-    }
-    .lang-switch-btn:hover { background: rgba(255,255,255,0.18); color: white; }
-    .lang-switch-btn.active-lang { background: rgba(255,255,255,0.22); color: white; font-weight: 600; border-color: rgba(255,255,255,0.45); }
-
-    .survey-cta-banner {
-      background: linear-gradient(135deg, var(--secondary-color) 0%, var(--accent-color) 100%);
-      border-radius: 8px;
-      padding: 2rem 2.5rem;
-      margin: 2rem 0 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .survey-cta-banner .cta-text h3 {
-      color: white;
-      font-family: var(--font-serif);
-      font-size: 1.25rem;
-      margin: 0 0 0.35rem;
-      font-weight: 700;
-    }
-    .survey-cta-banner .cta-text p {
-      color: rgba(255,255,255,0.82);
-      font-size: 0.88rem;
-      margin: 0;
-    }
-    .survey-cta-banner .cta-pills {
-      display: flex; gap: 8px; flex-wrap: wrap; margin-top: 0.6rem;
-    }
-    .cta-pill {
-      background: rgba(255,255,255,0.18);
-      color: white;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 3px 10px;
-      border-radius: 20px;
-    }
-    .btn-survey {
-      display: inline-block;
-      background: white;
-      color: var(--secondary-color);
-      padding: 0.85rem 2rem;
-      text-decoration: none;
-      font-family: var(--font-sans);
-      font-weight: 700;
-      font-size: 0.95rem;
-      border-radius: 5px;
-      white-space: nowrap;
-      transition: all 0.2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      flex-shrink: 0;
-    }
-    .btn-survey:hover { background: #f0f4f8; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
-    @media (max-width: 600px) {
-      .survey-cta-banner { flex-direction: column; text-align: center; }
-      .survey-cta-banner .cta-pills { justify-content: center; }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,300&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css">
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <nav class="navbar">
-    <a class="nav-brand" onclick="switchPage('about', document.querySelector('.nav-btn'))">
-      The PEACE Study
-      <span>Prehospital End-of-life Autonomy, Culture and Ethics</span>
-    </a>
-    <div class="nav-links">
-      <button class="nav-btn active" onclick="switchPage('about', this)" data-key="nav_about">About Study</button>
-      <button class="nav-btn" onclick="switchPage('framework', this)" data-key="nav_framework">Research Framework</button>
-      <button class="nav-btn" onclick="switchPage('consortium', this)" data-key="nav_consortium">Consortium & IRB</button>
-      <button class="nav-btn" onclick="switchPage('datahub', this)" data-key="nav_datahub">Data Hub</button>
-    </div>
-    <div style="display:flex;gap:4px;margin-left:1rem;">
-      <button class="lang-switch-btn active-lang" onclick="switchLang('en',this)" id="btn_en">EN</button>
-      <button class="lang-switch-btn" onclick="switchLang('zh',this)" id="btn_zh">中文</button>
-    </div>
-  </nav>
+  <!-- ═══ TOP BAR ═══ -->
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#about">
+        <span class="brand-name">The PEACE Study</span>
+        <span class="brand-sub" data-i18n="brand_sub">Prehospital End-of-life Autonomy, Culture and Ethics</span>
+      </a>
 
-  <header class="hero-section">
-    <p class="hero-eyebrow" data-key="hero_eyebrow">Cross-National EMS Research</p>
-    <h1 data-key="hero_h1">The PEACE Study</h1>
-    <p class="hero-subtitle" data-key="hero_subtitle">Prehospital End-of-life Autonomy, Culture and Ethics</p>
-    <div class="hero-divider"></div>
-    <p class="hero-desc" data-key="hero_desc">A Multi-Center Study on Paramedic Decision-Making in End-of-Life Conflict Scenarios</p>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <a href="#about" data-page="about" data-i18n="nav_about">About</a>
+        <a href="#framework" data-page="framework" data-i18n="nav_framework">Framework</a>
+        <a href="#consortium" data-page="consortium" data-i18n="nav_consortium">Consortium &amp; IRB</a>
+        <a href="#datahub" data-page="datahub" data-i18n="nav_datahub">Data Hub</a>
+        <a href="#log" data-page="log" data-i18n="nav_log">Study Log</a>
+        <a class="nav-cta" href="https://drjackchang.github.io/survey/peace.html" target="_blank" rel="noopener" data-i18n="nav_survey">Take the survey</a>
+      </nav>
+
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="zh" aria-pressed="false">中文</button>
+      </div>
+
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+        <svg class="i-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
   </header>
 
-  <main class="main-content">
+  <main id="main">
 
     <!-- ═══ ABOUT ═══ -->
-    <section id="about" class="page-section active">
-      <div style="padding: 2.5rem 0 1.5rem;">
-        <div class="academic-card" style="border-top: 3px solid var(--secondary-color);">
-          <div class="intro-grid">
-            <div class="intro-block paradigm">
-              <h3 data-key="about_h3a">The Paradigm Shift</h3>
-              <p data-key="about_p1">As global populations age, Emergency Medical Services (EMS) are shifting from a purely life-saving model to becoming the <em>gatekeepers</em> of community end-of-life care. Paramedics are often the first to encounter terminally ill patients in cardiac arrest—yet the decision to initiate or withhold resuscitation is rarely a purely clinical one.</p>
-            </div>
-            <div class="intro-block action">
-              <h3 data-key="about_h3b">The Action Gap</h3>
-              <p data-key="about_p2">While many countries have established legal frameworks for non-resuscitation (DNACPR, POLST), a significant "Action Gap" persists. Frontline providers frequently perform futile CPR due to fear of litigation or family conflict—even when a valid DNACPR order is present.</p>
-            </div>
+    <section class="page" id="p-about" data-page="about">
+      <div class="hero">
+        <div class="wrap">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Cross-national EMS research</p>
+          <h1 data-i18n="hero_h1">The PEACE Study</h1>
+          <p class="hero-sub" data-i18n="hero_subtitle">Prehospital End-of-life Autonomy, Culture and Ethics</p>
+          <p class="hero-desc" data-i18n="hero_desc">A multi-center study on how paramedics decide when end-of-life wishes, families and systems collide.</p>
+          <div class="hero-actions">
+            <a class="btn btn-light" id="hero-cta" href="https://drjackchang.github.io/survey/peace.html" target="_blank" rel="noopener"><span data-i18n="hero_cta">Take the survey</span> <span aria-hidden="true">→</span></a>
+            <a class="btn btn-ghost" href="#framework" data-i18n="hero_cta2">Explore the framework</a>
           </div>
-          <div class="highlight-box" data-key="about_obj"><strong>Study Objective:</strong> To investigate and compare the decision-making patterns of prehospital EMS providers across different countries and cultural contexts when facing end-of-life care conflict scenarios, and to measure the frequency and intensity of associated moral distress.</div>
-          <h3 data-key="about_h3c">Study Design Overview</h3>
-          <p data-key="about_p3">This is a cross-national, multi-center web-based survey. Three standardized clinical vignettes are presented to participants across three major cultural blocks. Outcome measures include decision choice (initiate vs. withhold CPR), moral distress intensity (MDS-EMS), legal confidence, and perceived systemic barriers.</p>
-          <div class="survey-cta-banner">
-            <div class="cta-text">
-              <h3 data-key="cta_h3">Are you an EMS provider? We need your voice.</h3>
-              <p data-key="cta_p">The survey takes 8–10 minutes and is fully anonymous. Available in 5 languages.</p>
-              <div class="cta-pills">
-                <span class="cta-pill" data-key="cta_pill1">⏱ 8–10 min</span>
-                <span class="cta-pill" data-key="cta_pill2">🔒 Anonymous</span>
-                <span class="cta-pill">🌐 EN / 中文 / 日本語 / 한국어 / العربية</span>
-                <span class="cta-pill" data-key="cta_pill4">✓ IRB ECKIRB1150308</span>
-              </div>
-            </div>
-            <a class="btn-survey" data-key="cta_btn"
-               href="https://drjackchang.github.io/survey/peace.html"
-               target="_blank" rel="noopener">Take the Survey →</a>
-          </div>
+          <dl class="facts">
+            <div class="fact"><dt data-i18n="fact_blocks">Cultural blocks</dt><dd>3</dd></div>
+            <div class="fact"><dt data-i18n="fact_vignettes">Clinical vignettes</dt><dd>3</dd></div>
+            <div class="fact"><dt data-i18n="fact_langs">Survey languages</dt><dd>5</dd></div>
+            <div class="fact"><dt data-i18n="fact_time">Minutes · anonymous</dt><dd>8–10</dd></div>
+          </dl>
         </div>
+      </div>
+
+      <div class="wrap page-body">
+        <div class="grid-2">
+          <article class="card accent-blue">
+            <h2 class="label" data-i18n="about_h3a">The paradigm shift</h2>
+            <p data-i18n="about_p1"></p>
+          </article>
+          <article class="card accent-teal">
+            <h2 class="label" data-i18n="about_h3b">The action gap</h2>
+            <p data-i18n="about_p2"></p>
+          </article>
+        </div>
+
+        <div class="callout" data-i18n="about_obj"></div>
+
+        <section class="block">
+          <h2 class="h-sec" data-i18n="about_h3c">Study design at a glance</h2>
+          <dl class="glance">
+            <div><dt data-i18n="g_design_l"></dt><dd data-i18n="g_design"></dd></div>
+            <div><dt data-i18n="g_pop_l"></dt><dd data-i18n="g_pop"></dd></div>
+            <div><dt data-i18n="g_vig_l"></dt><dd data-i18n="g_vig"></dd></div>
+            <div><dt data-i18n="g_out_l"></dt><dd data-i18n="g_out"></dd></div>
+          </dl>
+        </section>
+
+        <aside class="cta" id="about-cta">
+          <div class="cta-text">
+            <h2 data-i18n="cta_h3">Are you an EMS provider? We need your voice.</h2>
+            <p data-i18n="cta_p"></p>
+            <ul class="pills">
+              <li data-i18n="pill_time">8–10 min</li>
+              <li data-i18n="pill_anon">Anonymous</li>
+              <li>EN · 中文 · 日本語 · 한국어 · العربية</li>
+              <li data-i18n="pill_irb">IRB ECKIRB1150308</li>
+            </ul>
+          </div>
+          <a class="btn btn-light" href="https://drjackchang.github.io/survey/peace.html" target="_blank" rel="noopener"><span data-i18n="cta_btn">Take the survey</span> <span aria-hidden="true">→</span></a>
+        </aside>
       </div>
     </section>
 
     <!-- ═══ FRAMEWORK ═══ -->
-    <section id="framework" class="page-section">
-      <div style="padding: 2.5rem 0 1.5rem;">
-        <div class="academic-card">
-          <h2 data-key="fw_h2">Research Framework &amp; Methodology</h2>
-          <p data-key="fw_p1">This study employs a cross-national, multi-center web-based survey design. Participants are stratified into three major cultural cohorts to examine how distinct societal frameworks—such as family-centric filial piety versus individual patient autonomy—alter clinical decision paths.</p>
-
-          <div class="cohort-tags">
-            <div class="cohort-tag a">
-              <span class="tag-label" data-key="fw_grpA_label">Group A · Confucian</span>
-              <span data-key="fw_grpA_countries">Taiwan · South Korea · Japan</span>
-            </div>
-            <div class="cohort-tag b">
-              <span class="tag-label" data-key="fw_grpB_label">Group B · Middle Eastern</span>
-              <span data-key="fw_grpB_countries">Saudi Arabia · Jordan</span>
-            </div>
-            <div class="cohort-tag c">
-              <span class="tag-label" data-key="fw_grpC_label">Group C · Western Control</span>
-              <span data-key="fw_grpC_countries">UK · USA · Australia · Canada</span>
-            </div>
-          </div>
-
-          <h3 data-key="fw_vig_h3">Core Clinical Vignettes</h3>
-          <p data-key="fw_vig_p">The experimental core features 3 standardized, realistic clinical dilemmas. Select a scenario to view the structural parameters and the ethical tension being examined.</p>
-
-          <div class="vignette-container">
-            <div class="vignette-menu">
-              <button class="vignette-tab active" onclick="switchVig('vig1', this)">
-                <span class="tab-num" data-key="fw_s1_num">Scenario 1</span>
-                <span data-key="fw_s1_title">Valid DNACPR vs. Family</span>
-              </button>
-              <button class="vignette-tab" onclick="switchVig('vig2', this)">
-                <span class="tab-num" data-key="fw_s2_num">Scenario 2</span>
-                <span data-key="fw_s2_title">No Document vs. "Let Her Go"</span>
-              </button>
-              <button class="vignette-tab" onclick="switchVig('vig3', this)">
-                <span class="tab-num" data-key="fw_s3_num">Scenario 3</span>
-                <span data-key="fw_s3_title">System &amp; Public Pressure</span>
-              </button>
-
-            </div>
-
-            <div class="vignette-content-box">
-              <div id="vig1" class="v-content active">
-                <h4 data-key="v1_h4">Scenario 1 — Valid DNACPR vs. Family Conflict</h4>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_scene">Scene</span>
-                  <p data-key="v1_scene">You arrive at the home of a 78-year-old male with terminal lung cancer who is in cardiac arrest.</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_document">Document</span>
-                  <p data-key="v1_doc">A valid DNACPR (Do Not Attempt CPR) form is presented and confirmed on scene.</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_conflict">Conflict</span>
-                  <p data-key="v1_conflict"><span class="conflict-badge">Family vs. Document</span><br>The patient's son is extremely emotional and aggressively demands: <em>"Save my father! Do CPR now or I will sue you!"</em></p>
-                </div>
-              </div>
-
-              <div id="vig2" class="v-content">
-                <h4 data-key="v2_h4">Scenario 2 — No Document vs. "Let Her Go"</h4>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_scene">Scene</span>
-                  <p data-key="v2_scene">An 85-year-old female with severe dementia and multiple organ failure is found pulseless in bed. She is frail and bedridden.</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_document">Document</span>
-                  <p data-key="v2_doc">No official paper or digital DNACPR record is found on scene.</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_conflict">Conflict</span>
-                  <p data-key="v2_conflict"><span class="conflict-badge">No Document · Family Request</span><br>The family calmly states: <em>"She has suffered enough. We all agreed to let her go. Please do not torture her with CPR."</em></p>
-                </div>
-              </div>
-
-              <div id="vig3" class="v-content">
-                <h4 data-key="v3_h4">Scenario 3 — System Pressure &amp; Public Scrutiny</h4>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_scene">Scene</span>
-                  <p data-key="v3_scene">A terminally ill patient goes into cardiac arrest in a semi-public area. The spouse presents a valid DNACPR and asks you to let the patient pass peacefully.</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_conflict">Conflict</span>
-                  <p data-key="v3_conflict"><span class="conflict-badge">Public · Media · Dispatch</span><br>The adult son arrives furious, ignores the DNACPR, demands CPR, and begins filming while shouting accusations. A crowd gathers.</p>
-                </div>
-                <div class="v-row">
-                  <span class="v-label" data-key="lbl_pressure">Pressure</span>
-                  <p data-key="v3_pressure">Dispatch orders: <em>"The scene is getting out of control. Disregard the DNACPR. Start CPR and transport immediately to clear the scene."</em></p>
-                </div>
-              </div>
-
-            </div>
-          </div>
+    <section class="page" id="p-framework" data-page="framework" hidden>
+      <div class="page-head">
+        <div class="wrap">
+          <p class="eyebrow" data-i18n="fw_kicker">Methodology</p>
+          <h1 data-i18n="fw_h2">Research framework</h1>
+          <p data-i18n="fw_p1"></p>
         </div>
+      </div>
+      <div class="wrap page-body">
+        <section class="block">
+          <h2 class="h-sec" data-i18n="fw_blocks_h3">Three cultural blocks</h2>
+          <div class="groups" id="groups"></div>
+        </section>
+
+        <section class="block">
+          <h2 class="h-sec" data-i18n="fw_vig_h3">Core clinical vignettes</h2>
+          <p class="muted" data-i18n="fw_vig_p"></p>
+          <div class="vig">
+            <div class="vig-tabs" role="tablist" aria-label="Scenarios">
+              <button class="vig-tab" role="tab" id="t-vig1" aria-controls="vig1" aria-selected="true"><small data-i18n="fw_s1_num">Scenario 1</small><span data-i18n="fw_s1_title"></span></button>
+              <button class="vig-tab" role="tab" id="t-vig2" aria-controls="vig2" aria-selected="false" tabindex="-1"><small data-i18n="fw_s2_num">Scenario 2</small><span data-i18n="fw_s2_title"></span></button>
+              <button class="vig-tab" role="tab" id="t-vig3" aria-controls="vig3" aria-selected="false" tabindex="-1"><small data-i18n="fw_s3_num">Scenario 3</small><span data-i18n="fw_s3_title"></span></button>
+            </div>
+
+            <div class="vig-panel" id="vig1" role="tabpanel" aria-labelledby="t-vig1">
+              <h3 data-i18n="v1_h4"></h3>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_scene">Scene</span><p data-i18n="v1_scene"></p></div>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_document">Document</span><p data-i18n="v1_doc"></p></div>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_conflict">Conflict</span><p data-i18n="v1_conflict"></p></div>
+            </div>
+            <div class="vig-panel" id="vig2" role="tabpanel" aria-labelledby="t-vig2" hidden>
+              <h3 data-i18n="v2_h4"></h3>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_scene">Scene</span><p data-i18n="v2_scene"></p></div>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_document">Document</span><p data-i18n="v2_doc"></p></div>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_conflict">Conflict</span><p data-i18n="v2_conflict"></p></div>
+            </div>
+            <div class="vig-panel" id="vig3" role="tabpanel" aria-labelledby="t-vig3" hidden>
+              <h3 data-i18n="v3_h4"></h3>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_scene">Scene</span><p data-i18n="v3_scene"></p></div>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_conflict">Conflict</span><p data-i18n="v3_conflict"></p></div>
+              <div class="v-row"><span class="v-label" data-i18n="lbl_pressure">Pressure</span><p data-i18n="v3_pressure"></p></div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
     <!-- ═══ CONSORTIUM ═══ -->
-    <section id="consortium" class="page-section">
-      <div style="padding: 2.5rem 0 1.5rem;">
-        <div class="academic-card">
-          <h2 data-key="cs_h2">Global Consortium &amp; Ethical Approval</h2>
-
-          <div class="highlight-box" data-key="cs_irb"><strong>Institutional Review Board (IRB) Status:</strong><br>
-            This study protocol, data security plan, and cross-national informed consent structure have been formally reviewed and <u>approved</u> by the Ethics Committee.<br>
-            <span class="irb-badge">Approval No. ECKIRB1150308</span></div>
-
-          <h3 data-key="cs_pi_h3">Principal Investigators — Lead Sites</h3>
-          <div class="consortium-grid">
-            <div class="investigator-card pi">
-              <span class="role"><span class="fi fi-tw"></span> <span data-key="cs_tw_country">Taiwan</span></span>
-              <h4>Yu-Tung Chang, PhD</h4>
-              <p class="pi-title" data-key="cs_pi_role">Co-Principal Investigator</p>
-              <p data-key="cs_tw_dept">College of Health Technology</p>
-              <p data-key="cs_tw_inst">National Taipei University of Nursing and Health Sciences</p>
-            </div>
-            <div class="investigator-card pi">
-              <span class="role"><span class="fi fi-sa"></span> <span data-key="cs_sa_country">Saudi Arabia</span></span>
-              <h4>Prof. Brett Williams, PhD, FACP</h4>
-              <p class="pi-title" data-key="cs_pi_role">Co-Principal Investigator</p>
-              <p data-key="cs_sa_dept">Department of Emergency Medical Care</p>
-              <p data-key="cs_sa_inst">Imam Abdulrahman Bin Faisal University</p>
-            </div>
-          </div>
-
-          <h3 style="margin-top: 2.5rem;" data-key="cs_coord_h3">National Coordinators — Partner Sites</h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted);" data-key="cs_coord_p">National Coordinators lead in-country data collection and contribute to manuscript co-authorship. We are actively expanding our international network.</p>
-
-          <div class="consortium-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
-            <div class="investigator-card">
-              <span class="role"><span class="fi fi-au"></span> <span data-key="cs_au_country">Australia</span></span>
-              <h4>Kylie Kendrick</h4>
-              <p class="pi-title" data-key="cs_coord_role">National Coordinator</p>
-              <p data-key="cs_au_title">Registered Paramedic | Senior Lecturer in Paramedicine</p>
-              <p data-key="cs_au_dept">School of Nursing, Midwifery and Paramedicine</p>
-              <p data-key="cs_au_inst">Australian Catholic University</p>
-            </div>
-            <div class="investigator-card">
-              <span class="role"><span class="fi fi-jo"></span> <span data-key="cs_jo_country">Jordan</span></span>
-              <h4>Dr. Alaa Oteir, PhD</h4>
-              <p class="pi-title" data-key="cs_coord_role">National Coordinator</p>
-              <p data-key="cs_jo_title">Associate Professor &amp; Head of Allied Medical Sciences</p>
-              <p data-key="cs_jo_dept">Faculty of Applied Medical Sciences</p>
-              <p data-key="cs_jo_inst">Jordan University of Science and Technology</p>
-            </div>
-            <div class="investigator-card">
-              <span class="role"><span class="fi fi-my"></span> <span data-key="cs_my_country">Malaysia</span></span>
-              <h4>Dr. Sarah Shaikh Abdul Karim, M.Med</h4>
-              <p class="pi-title" data-key="cs_coord_role">National Coordinator</p>
-              <p data-key="cs_my_title">Specialist, Emergency Medicine</p>
-              <p data-key="cs_my_dept">Faculty of Medicine</p>
-              <p data-key="cs_my_inst">Management and Science University (MSU)</p>
-            </div>
-          </div>
-
-          <div style="margin-top: 3rem; text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-color);">
-            <p style="color: var(--text-muted); font-size: 0.92rem;" data-key="cs_join_p">Interested in joining the consortium as a National Lead?</p>
-            <a href="mailto:yutung@ntunhs.edu.tw" class="btn-academic" data-key="cs_join_btn">Contact the PI to Collaborate</a>
-          </div>
+    <section class="page" id="p-consortium" data-page="consortium" hidden>
+      <div class="page-head">
+        <div class="wrap">
+          <p class="eyebrow" data-i18n="cs_kicker">People &amp; ethics</p>
+          <h1 data-i18n="cs_h2">Global consortium</h1>
+          <p data-i18n="cs_lead"></p>
         </div>
+      </div>
+      <div class="wrap page-body">
+        <div class="callout irb">
+          <div data-i18n="cs_irb"></div>
+          <span class="irb-badge" data-i18n="cs_irb_badge">Approval No. ECKIRB1150308</span>
+        </div>
+
+        <section class="block">
+          <h2 class="h-sec" data-i18n="cs_pi_h3">Principal investigators</h2>
+          <div class="people" id="people-pi"></div>
+        </section>
+
+        <section class="block">
+          <h2 class="h-sec" data-i18n="cs_coord_h3">National coordinators</h2>
+          <p class="muted" data-i18n="cs_coord_p"></p>
+          <div class="people" id="people-nc"></div>
+        </section>
+
+        <aside class="join">
+          <h2 class="h-sec" data-i18n="cs_join_h3">Join as a national lead</h2>
+          <p class="muted" data-i18n="cs_join_p"></p>
+          <div class="chips" id="open-countries"></div>
+          <a class="btn btn-primary" href="mailto:yutung@ntunhs.edu.tw?subject=PEACE%20Study%20%E2%80%94%20National%20Lead" data-i18n="cs_join_btn">Contact the PI to collaborate</a>
+        </aside>
       </div>
     </section>
 
     <!-- ═══ DATA HUB ═══ -->
-    <section id="datahub" class="page-section">
-      <div style="padding: 2.5rem 0 1.5rem;">
-        <div class="academic-card">
-          <h2 data-key="dh_h2">Data Hub &amp; Recruitment Status</h2>
-          <p data-key="dh_p1">To ensure robust statistical power for multivariate modeling (ANOVAs and multiple logistic regression), the study requires a minimum of <strong>300 valid responses per cultural block</strong>. The overall global recruitment target is <strong>1,000–1,500</strong> frontline participants.</p>
-
-          <div style="margin-top: 2.5rem;">
-            <div class="recruitment-block">
-              <h4 data-key="dh_grpA_h4">Group A — Confucian Cultural Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span></h4>
-              <div class="progress-track">
-                <div class="progress-fill active-fill" style="width: 15%;" data-key="dh_recruiting">Active · Recruiting</div>
-              </div>
-              <p class="progress-meta" data-key="dh_grpA_meta">Taiwan · South Korea · Japan</p>
-            </div>
-
-            <div class="recruitment-block">
-              <h4 data-key="dh_grpB_h4">Group B — Middle Eastern Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span></h4>
-              <div class="progress-track">
-                <div class="progress-fill active-fill" style="width: 5%;" data-key="dh_recruiting">Active · Recruiting</div>
-              </div>
-              <p class="progress-meta" data-key="dh_grpB_meta">Saudi Arabia · Jordan</p>
-            </div>
-
-            <div class="recruitment-block">
-              <h4 data-key="dh_grpC_h4">Group C — Western Control Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span></h4>
-              <div class="progress-track">
-                <div class="progress-fill pending-fill" style="width: 100%;" data-key="dh_awaiting">Awaiting National Coordinator</div>
-              </div>
-              <p class="progress-meta" data-key="dh_grpC_meta">UK · USA · Australia · Canada — National Coordinator position open</p>
-            </div>
-          </div>
-
-          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);" data-key="dh_footnote">
-            * Precise enrollment metrics will be published here upon completion of Phase 2 (Data Collection). All data are handled in accordance with IRB-approved protocols and cross-national data protection standards.
-          </p>
+    <section class="page" id="p-datahub" data-page="datahub" hidden>
+      <div class="page-head">
+        <div class="wrap">
+          <p class="eyebrow" data-i18n="dh_kicker">Recruitment</p>
+          <h1 data-i18n="dh_h2">Data hub</h1>
+          <p data-i18n="dh_p1"></p>
         </div>
+      </div>
+      <div class="wrap page-body">
+        <div class="stats" id="stats"></div>
+        <div class="hub" id="hub"></div>
+        <p class="footnote" data-i18n="dh_footnote"></p>
+        <p class="updated"><span data-i18n="updated">Last updated</span><span data-i18n="colon">: </span><time class="js-updated"></time></p>
+      </div>
+    </section>
+
+    <!-- ═══ STUDY LOG ═══ -->
+    <section class="page" id="p-log" data-page="log" hidden>
+      <div class="page-head">
+        <div class="wrap">
+          <p class="eyebrow" data-i18n="log_kicker">Milestones</p>
+          <h1 data-i18n="log_h2">Study log</h1>
+          <p data-i18n="log_p"></p>
+        </div>
+      </div>
+      <div class="wrap page-body">
+        <ol class="timeline" id="timeline"></ol>
       </div>
     </section>
 
   </main>
 
-  <footer>
-    <p data-key="footer1"><strong>The PEACE Study</strong> — Prehospital End-of-life Autonomy, Culture and Ethics</p>
-    <p data-key="footer2">Approved by the Institutional Review Board &nbsp;|&nbsp; Approval No. ECKIRB1150308</p>
-    <p data-key="footer3">Data strictly restricted to approved academic analysis. All rights reserved.</p>
-    <p data-key="footer4">&copy; 2026 PEACE Study Global Consortium</p>
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <p class="footer-brand">The PEACE Study</p>
+        <p data-i18n="footer_tag">Prehospital End-of-life Autonomy, Culture and Ethics</p>
+      </div>
+      <div>
+        <p data-i18n="footer_irb"></p>
+        <p data-i18n="footer_data"></p>
+      </div>
+      <div>
+        <p><span data-i18n="footer_contact">Contact</span><span data-i18n="colon">: </span><a href="mailto:yutung@ntunhs.edu.tw">yutung@ntunhs.edu.tw</a></p>
+        <p><span data-i18n="updated">Last updated</span><span data-i18n="colon">: </span><time class="js-updated"></time></p>
+      </div>
+    </div>
+    <div class="wrap footer-copy"><p data-i18n="footer_copy"></p></div>
   </footer>
 
-  <script>
-    function switchPage(pageId, btn) {
-      document.querySelectorAll('.page-section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
-      if (btn) btn.classList.add('active');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+  <!-- Mobile: sticky survey bar -->
+  <div class="mcta" id="mcta" aria-hidden="true">
+    <small data-i18n="mcta_meta">8–10 min · anonymous</small>
+    <a class="btn btn-primary" href="https://drjackchang.github.io/survey/peace.html" target="_blank" rel="noopener" tabindex="-1" data-i18n="mcta_btn">Take the survey</a>
+  </div>
 
-    function switchVig(vigId, btn) {
-      document.querySelectorAll('.v-content').forEach(c => c.classList.remove('active'));
-      document.querySelectorAll('.vignette-tab').forEach(t => t.classList.remove('active'));
-      document.getElementById(vigId).classList.add('active');
-      if (btn) btn.classList.add('active');
-    }
-
-    const T = {
-      en: {
-        nav_about: 'About Study',
-        nav_framework: 'Research Framework',
-        nav_consortium: 'Consortium & IRB',
-        nav_datahub: 'Data Hub',
-        hero_eyebrow: 'Cross-National EMS Research',
-        hero_h1: 'The PEACE Study',
-        hero_subtitle: 'Prehospital End-of-life Autonomy, Culture and Ethics',
-        hero_desc: 'A Multi-Center Study on Paramedic Decision-Making in End-of-Life Conflict Scenarios',
-        about_h3a: 'The Paradigm Shift',
-        about_p1: 'As global populations age, Emergency Medical Services (EMS) are shifting from a purely life-saving model to becoming the <em>gatekeepers</em> of community end-of-life care. Paramedics are often the first to encounter terminally ill patients in cardiac arrest—yet the decision to initiate or withhold resuscitation is rarely a purely clinical one.',
-        about_h3b: 'The Action Gap',
-        about_p2: 'While many countries have established legal frameworks for non-resuscitation (DNACPR, POLST), a significant "Action Gap" persists. Frontline providers frequently perform futile CPR due to fear of litigation or family conflict—even when a valid DNACPR order is present.',
-        about_obj: '<strong>Study Objective:</strong> To investigate and compare the decision-making patterns of prehospital EMS providers across different countries and cultural contexts when facing end-of-life care conflict scenarios, and to measure the frequency and intensity of associated moral distress.',
-        about_h3c: 'Study Design Overview',
-        about_p3: 'This is a cross-national, multi-center web-based survey. Three standardized clinical vignettes are presented to participants across three major cultural blocks. Outcome measures include decision choice (initiate vs. withhold CPR), moral distress intensity (MDS-EMS), legal confidence, and perceived systemic barriers.',
-        cta_h3: 'Are you an EMS provider? We need your voice.',
-        cta_p: 'The survey takes 8–10 minutes and is fully anonymous. Available in 5 languages.',
-        cta_pill1: '⏱ 8–10 min',
-        cta_pill2: '🔒 Anonymous',
-        cta_pill4: '✓ IRB ECKIRB1150308',
-        cta_btn: 'Take the Survey →',
-        footer1: '<strong>The PEACE Study</strong> — Prehospital End-of-life Autonomy, Culture and Ethics',
-        footer2: 'Approved by the Institutional Review Board &nbsp;|&nbsp; Approval No. ECKIRB1150308',
-        footer3: 'Data strictly restricted to approved academic analysis. All rights reserved.',
-        footer4: '&copy; 2026 PEACE Study Global Consortium',
-        fw_h2: 'Research Framework &amp; Methodology',
-        fw_p1: 'This study employs a cross-national, multi-center web-based survey design. Participants are stratified into three major cultural cohorts to examine how distinct societal frameworks—such as family-centric filial piety versus individual patient autonomy—alter clinical decision paths.',
-        fw_grpA_label: 'Group A · Confucian', fw_grpA_countries: 'Taiwan · South Korea · Japan',
-        fw_grpB_label: 'Group B · Middle Eastern', fw_grpB_countries: 'Saudi Arabia · Jordan',
-        fw_grpC_label: 'Group C · Western Control', fw_grpC_countries: 'UK · USA · Australia · Canada',
-        fw_vig_h3: 'Core Clinical Vignettes',
-        fw_vig_p: 'The experimental core features 3 standardized, realistic clinical dilemmas. Select a scenario to view the structural parameters and the ethical tension being examined.',
-        fw_s1_num: 'Scenario 1', fw_s1_title: 'Valid DNACPR vs. Family',
-        fw_s2_num: 'Scenario 2', fw_s2_title: 'No Document vs. "Let Her Go"',
-        fw_s3_num: 'Scenario 3', fw_s3_title: 'System &amp; Public Pressure',
-
-        lbl_scene: 'Scene', lbl_document: 'Document', lbl_conflict: 'Conflict',
-        lbl_pressure: 'Pressure', lbl_authority: 'Authority', lbl_status: 'Status',
-        v1_h4: 'Scenario 1 — Valid DNACPR vs. Family Conflict',
-        v1_scene: 'You arrive at the home of a 78-year-old male with terminal lung cancer who is in cardiac arrest.',
-        v1_doc: 'A valid DNACPR (Do Not Attempt CPR) form is presented and confirmed on scene.',
-        v1_conflict: '<span class="conflict-badge">Family vs. Document</span><br>The patient\'s son is extremely emotional and aggressively demands: <em>"Save my father! Do CPR now or I will sue you!"</em>',
-        v2_h4: 'Scenario 2 — No Document vs. "Let Her Go"',
-        v2_scene: 'An 85-year-old female with severe dementia and multiple organ failure is found pulseless in bed. She is frail and bedridden.',
-        v2_doc: 'No official paper or digital DNACPR record is found on scene.',
-        v2_conflict: '<span class="conflict-badge">No Document · Family Request</span><br>The family calmly states: <em>"She has suffered enough. We all agreed to let her go. Please do not torture her with CPR."</em>',
-        v3_h4: 'Scenario 3 — System Pressure &amp; Public Scrutiny',
-        v3_scene: 'A terminally ill patient goes into cardiac arrest in a semi-public area. The spouse presents a valid DNACPR and asks you to let the patient pass peacefully.',
-        v3_conflict: '<span class="conflict-badge">Public · Media · Dispatch</span><br>The adult son arrives furious, ignores the DNACPR, demands CPR, and begins filming while shouting accusations. A crowd gathers.',
-        v3_pressure: 'Dispatch orders: <em>"The scene is getting out of control. Disregard the DNACPR. Start CPR and transport immediately to clear the scene."</em>',
-
-        cs_h2: 'Global Consortium &amp; Ethical Approval',
-        cs_irb: '<strong>Institutional Review Board (IRB) Status:</strong><br>This study protocol, data security plan, and cross-national informed consent structure have been formally reviewed and <u>approved</u> by the Ethics Committee.<br><span class="irb-badge">Approval No. ECKIRB1150308</span>',
-        cs_pi_h3: 'Principal Investigators — Lead Sites', cs_pi_role: 'Co-Principal Investigator',
-        cs_tw_country: 'Taiwan', cs_sa_country: 'Saudi Arabia',
-        cs_au_country: 'Australia', cs_jo_country: 'Jordan', cs_my_country: 'Malaysia',
-        cs_coord_role: 'National Coordinator',
-        cs_au_title: 'Registered Paramedic | Senior Lecturer in Paramedicine',
-        cs_au_dept: 'School of Nursing, Midwifery and Paramedicine',
-        cs_au_inst: 'Australian Catholic University',
-        cs_jo_title: 'Associate Professor &amp; Head of Allied Medical Sciences',
-        cs_jo_dept: 'Faculty of Applied Medical Sciences',
-        cs_jo_inst: 'Jordan University of Science and Technology',
-        cs_my_title: 'Specialist, Emergency Medicine',
-        cs_my_dept: 'Faculty of Medicine',
-        cs_my_inst: 'Management and Science University (MSU)',
-        cs_tw_dept: 'College of Health Technology',
-        cs_tw_inst: 'National Taipei University of Nursing and Health Sciences',
-        cs_sa_dept: 'Department of Emergency Medical Care',
-        cs_sa_inst: 'Imam Abdulrahman Bin Faisal University',
-        cs_coord_h3: 'National Coordinators — Partner Sites',
-        cs_coord_p: 'National Coordinators lead in-country data collection and contribute to manuscript co-authorship. We are actively expanding our international network.',
-
-        cs_join_p: 'Interested in joining the consortium as a National Lead?',
-        cs_join_btn: 'Contact the PI to Collaborate',
-        dh_h2: 'Data Hub &amp; Recruitment Status',
-        dh_p1: 'To ensure robust statistical power for multivariate modeling (ANOVAs and multiple logistic regression), the study requires a minimum of <strong>300 valid responses per cultural block</strong>. The overall global recruitment target is <strong>1,000–1,500</strong> frontline participants.',
-        dh_grpA_h4: 'Group A — Confucian Cultural Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span>',
-        dh_grpB_h4: 'Group B — Middle Eastern Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span>',
-        dh_grpC_h4: 'Group C — Western Control Block <span style="font-weight: 400; color: var(--text-muted);">(Target: ≥ 300)</span>',
-        dh_recruiting: 'Active · Recruiting', dh_awaiting: 'Awaiting National Coordinator',
-        dh_grpA_meta: 'Taiwan · South Korea · Japan',
-        dh_grpB_meta: 'Saudi Arabia · Jordan',
-        dh_grpC_meta: 'UK · USA · Australia · Canada — National Coordinator position open',
-        dh_footnote: '* Precise enrollment metrics will be published here upon completion of Phase 2 (Data Collection). All data are handled in accordance with IRB-approved protocols and cross-national data protection standards.',
-      },
-
-      zh: {
-        // ── Navigation ──
-        nav_about: '研究概覽',
-        nav_framework: '研究架構',
-        nav_consortium: '研究團隊與倫審',
-        nav_datahub: '收案進度',
-        // ── Hero ──
-        hero_eyebrow: '跨國 EMS 研究',
-        hero_h1: 'PEACE 研究',
-        hero_subtitle: '院前臨終自主、文化與倫理',
-        hero_desc: '院前急救人員面對臨終衝突情境之決策行為多中心調查',
-        // ── About ──
-        about_h3a: '典範轉移',
-        about_p1: '隨著全球人口高齡化，緊急醫療服務（EMS）正從純粹的生命搶救模式，轉型為社區臨終照護的<em>守門人</em>。救護人員往往是第一個遭遇末期病患心跳停止的現場人員，然而啟動或拒絕急救的決定，從來不是單純的臨床判斷。',
-        about_h3b: '執行落差',
-        about_p2: '雖然許多國家已建立拒絕急救的法律框架（如 DNACPR、POLST），卻仍存在顯著的「執行落差」。第一線救護員往往在有效 DNACPR 在場的情況下，仍因擔憂訴訟或家屬衝突而執行無效 CPR。',
-        about_obj: '<strong>研究目的：</strong>比較不同國家與文化背景的院前 EMS 人員，在面對臨終照護衝突情境時的決策模式，並量測相關道德困擾的頻率與強度。',
-        about_h3c: '研究設計概覽',
-        about_p3: '本研究採跨國多中心網路問卷設計，向三大文化區塊的受試者呈現三個標準化臨床情境，測量結果包含決策選擇（施行 vs. 拒絕 CPR）、道德困擾強度（MDS-EMS）、法律信心及系統性障礙。',
-        // ── CTA ──
-        cta_h3: '您是院前急救人員嗎？我們需要您的聲音。',
-        cta_p: '問卷約需 8–10 分鐘，完全匿名，提供 5 種語言版本。',
-        cta_pill1: '⏱ 8–10 分鐘',
-        cta_pill2: '🔒 完全匿名',
-        cta_pill4: '✓ 倫審字號 ECKIRB1150308',
-        cta_btn: '立即填寫問卷 →',
-        // ── Footer ──
-        footer1: '<strong>PEACE 研究</strong> — 院前臨終自主、文化與倫理',
-        footer2: '已通過人體研究倫理審查委員會核准 &nbsp;|&nbsp; 核准字號 ECKIRB1150308',
-        footer3: '資料嚴格限用於核准之學術分析。版權所有。',
-        footer4: '&copy; 2026 PEACE 研究全球聯盟',
-        // ── Research Framework ──
-        fw_h2: '研究架構與方法學',
-        fw_p1: '本研究採跨國多中心網路問卷設計，將受試者依文化背景區分為三大群組，以探討不同社會框架（如以家族為核心的孝道文化 vs. 個人病患自主權）如何影響臨床決策路徑。',
-        fw_grpA_label: '群組 A · 儒家文化圈',
-        fw_grpA_countries: '台灣 · 南韓 · 日本',
-        fw_grpB_label: '群組 B · 中東文化圈',
-        fw_grpB_countries: '沙烏地阿拉伯 · 約旦',
-        fw_grpC_label: '群組 C · 西方對照組',
-        fw_grpC_countries: '英國 · 美國 · 澳洲 · 加拿大',
-        fw_vig_h3: '核心臨床情境劇本',
-        fw_vig_p: '研究核心共設計 3 個標準化、高擬真度的臨床倫理困境。請點選情境以檢視各情境結構參數及其所探討的倫理張力。',
-        fw_s1_num: '情境一',
-        fw_s1_title: '有效 DNACPR vs. 家屬意見',
-        fw_s2_num: '情境二',
-        fw_s2_title: '無文件 vs.「讓她走」',
-        fw_s3_num: '情境三',
-        fw_s3_title: '系統壓力與公眾審視',
-        // ── Vignette labels ──
-        lbl_scene: '現場',
-        lbl_document: '文件',
-        lbl_conflict: '衝突',
-        lbl_pressure: '壓力',
-        lbl_authority: '指揮',
-        lbl_status: '狀況',
-        // ── Vignette 1 ──
-        v1_h4: '情境一 — 有效 DNACPR vs. 家屬衝突',
-        v1_scene: '您抵達一名 78 歲末期肺癌男性的住所，患者已心跳停止。',
-        v1_doc: '現場出示並確認一份有效的拒絕急救同意書（DNACPR）。',
-        v1_conflict: '<span class="conflict-badge">家屬 vs. 文件</span><br>患者之子情緒激動，強烈要求：<em>「救我父親！現在就做 CPR，否則我要告你！」</em>',
-        // ── Vignette 2 ──
-        v2_h4: '情境二 — 無文件 vs.「讓她走」',
-        v2_scene: '一名 85 歲患有嚴重失智症且多重器官衰竭的女性，被發現無脈搏地躺在床上，身形虛弱且長期臥床。',
-        v2_doc: '現場未發現任何紙本或電子版 DNACPR 記錄。',
-        v2_conflict: '<span class="conflict-badge">無文件 · 家屬請求</span><br>家屬平靜地表示：<em>「她已經受夠了。我們全家都同意讓她走。請不要用 CPR 折磨她。」</em>',
-        // ── Vignette 3 ──
-        v3_h4: '情境三 — 系統壓力與公眾審視',
-        v3_scene: '一名末期病患在半公開場所發生心跳停止。配偶出示有效 DNACPR，請求讓患者安詳離去。',
-        v3_conflict: '<span class="conflict-badge">公眾 · 媒體 · 派遣</span><br>成年之子憤怒趕到，無視 DNACPR，要求施行 CPR，並開始拍攝並高聲指責，圍觀群眾逐漸聚集。',
-        v3_pressure: '勤務中心下令：<em>「現場已失控。不理會 DNACPR，立即施行 CPR 並後送以清空現場。」</em>',
-        // ── Consortium ──
-        cs_h2: '全球研究聯盟與倫理審查',
-        cs_irb: '<strong>人體研究倫理審查委員會（IRB）狀態：</strong><br>本研究計畫書、資料安全計畫及跨國知情同意架構已經倫理審查委員會正式審閱並<u>核准</u>。<br><span class="irb-badge">核准字號 ECKIRB1150308</span>',
-        cs_pi_h3: '主持人 — 牽頭機構',
-        cs_pi_role: '共同主持人',
-        cs_tw_country: '台灣',
-        cs_sa_country: '沙烏地阿拉伯',
-        cs_au_country: '澳洲',
-        cs_jo_country: '約旦',
-        cs_my_country: '馬來西亞',
-        cs_coord_role: '國家協調人',
-        cs_au_title: '註冊急救員 | 急救醫學資深講師',
-        cs_au_dept: '護理、助產與急救醫學學院',
-        cs_au_inst: '澳洲天主教大學',
-        cs_jo_title: '副教授暨醫療輔助科學學系主任',
-        cs_jo_dept: '應用醫療科學學院',
-        cs_jo_inst: '約旦科技大學',
-        cs_my_title: '急診醫學專科醫師',
-        cs_my_dept: '醫學院',
-        cs_my_inst: '管理與科學大學（MSU）',
-        cs_tw_dept: '健康科技學院',
-        cs_tw_inst: '國立臺北護理健康大學',
-        cs_sa_dept: '緊急醫療救護學系',
-        cs_sa_inst: '伊瑪目阿卜杜勒拉曼·本·費薩爾大學',
-        cs_coord_h3: '國家協調人 — 合作機構',
-        cs_coord_p: '國家協調人負責帶領各國資料蒐集作業，並以共同作者身分參與論文撰寫。本研究持續擴展國際合作網絡。',
-        cs_join_p: '有意以國家牽頭人身分加入研究聯盟？',
-        cs_join_btn: '聯繫主持人洽談合作',
-        // ── Data Hub ──
-        dh_h2: '收案進度與資料中心',
-        dh_p1: '為確保多變量模型（ANOVA 及多元羅吉斯迴歸）的統計檢力，本研究每個文化區塊至少須蒐集 <strong>300 份有效問卷</strong>。全球收案總目標為 <strong>1,000–1,500</strong> 名第一線參與者。',
-        dh_grpA_h4: '群組 A — 儒家文化圈 <span style="font-weight: 400; color: var(--text-muted);">（目標：≥ 300）</span>',
-        dh_grpB_h4: '群組 B — 中東文化圈 <span style="font-weight: 400; color: var(--text-muted);">（目標：≥ 300）</span>',
-        dh_grpC_h4: '群組 C — 西方對照組 <span style="font-weight: 400; color: var(--text-muted);">（目標：≥ 300）</span>',
-        dh_recruiting: '進行中 · 招募中',
-        dh_awaiting: '等待國家協調人',
-        dh_grpA_meta: '台灣 · 南韓 · 日本',
-        dh_grpB_meta: '沙烏地阿拉伯 · 約旦',
-        dh_grpC_meta: '英國 · 美國 · 澳洲 · 加拿大 — 國家協調人職缺開放中',
-        dh_footnote: '* 精確收案數字將於第二階段（資料蒐集）完成後公布於此。所有資料依據 IRB 核准之規程及跨國個資保護標準進行處理。',
-      }
-    };
-
-    let currentLang = 'en';
-
-    function switchLang(lang, btn) {
-      currentLang = lang;
-      document.querySelectorAll('.lang-switch-btn').forEach(b => b.classList.remove('active-lang'));
-      if (btn) btn.classList.add('active-lang');
-      const d = T[lang];
-      document.querySelectorAll('[data-key]').forEach(el => {
-        const key = el.getAttribute('data-key');
-        if (d[key] !== undefined) el.innerHTML = d[key];
-      });
-      document.querySelector('.nav-brand span').textContent =
-        lang === 'zh' ? '院前臨終自主、文化與倫理跨國研究' : 'Prehospital End-of-life Autonomy, Culture and Ethics';
-      document.title = lang === 'zh'
-        ? 'PEACE 研究 | 院前臨終決策跨國調查'
-        : 'The PEACE Study | End-of-Life Decisions in EMS';
-    }
-  </script>
+  <script src="data/peace-data.js"></script>
+  <script src="assets/i18n.js"></script>
+  <script src="assets/app.js"></script>
 </body>
 </html>
