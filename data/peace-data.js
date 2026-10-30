@@ -12,7 +12,7 @@
 window.PEACE_DATA = {
 
   /* Date shown as "Last updated" on the Data Hub and footer (YYYY-MM-DD) */
-  updated: '2026-10-12',
+  updated: '2026-10-30',
 
   /* ---------------------------------------------------------------
      Country names (ISO 3166-1 alpha-2 codes, used for flags too)
@@ -27,7 +27,8 @@ window.PEACE_DATA = {
     us: { en: 'United States',  zh: '美國' },
     au: { en: 'Australia',      zh: '澳洲' },
     ca: { en: 'Canada',         zh: '加拿大' },
-    my: { en: 'Malaysia',       zh: '馬來西亞' }
+    my: { en: 'Malaysia',       zh: '馬來西亞' },
+    ch: { en: 'Switzerland',    zh: '瑞士' }
   },
 
   /* ---------------------------------------------------------------
@@ -87,6 +88,13 @@ window.PEACE_DATA = {
       position_en: 'Specialist, Emergency Medicine', position_zh: '急診醫學專科醫師',
       dept_en: 'Faculty of Medicine', dept_zh: '醫學院',
       inst_en: 'Management and Science University (MSU)', inst_zh: '管理與科學大學（MSU）'
+    },
+    {
+      country: 'ch', role: 'nc',
+      name: 'Sascha Janssen, MLS, MSc',
+      position_en: 'Head of Emergency Medical Services', position_zh: '救護部門總負責人',
+      dept_en: 'Rettungsdienst (Ambulance Service)', dept_zh: '救護部門（Rettungsdienst）',
+      inst_en: 'Spital Thurgau AG', inst_zh: '圖爾高州立醫院集團（Spital Thurgau AG）'
     }
   ],
 
@@ -107,6 +115,11 @@ window.PEACE_DATA = {
       date: '2026', type: 'language',
       text_en: 'Survey available in five languages: English, Chinese, Japanese, Korean and Arabic.',
       text_zh: '問卷提供英文、中文、日文、韓文、阿拉伯文五種語言版本。'
+    },
+    {
+      date: '2026-10-30', type: 'site',
+      text_en: 'Switzerland joins the consortium — Sascha Janssen (Spital Thurgau AG) appointed National Coordinator.',
+      text_zh: '瑞士加入研究聯盟，由 Sascha Janssen（Spital Thurgau AG）擔任國家協調人。'
     }
   ]
 };
